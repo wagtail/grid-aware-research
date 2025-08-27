@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-content_root="../">
+<head>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <title>How to use StreamField for mixed content &mdash; Wagtail Documentation 7.1 documentation</title>
+    
+        <link rel="shortcut icon" href="../_static/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../_static/dist/fontawesome.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/dist/theme.css%3Fv=310cf088.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css%3Fv=76b2166b.css" />
+            <link rel="search" title="Search" href="https://docs.wagtail.org/en/stable/search.html" />
+            <link rel="top" title="Wagtail Documentation 7.1 documentation" href="streamfield.html#" />
+            <link rel="up" title="Usage guide" href="https://docs.wagtail.org/en/stable/topics/index.html" />
+            <link rel="next" title="Permissions" href="https://docs.wagtail.org/en/stable/topics/permissions.html" />
+            <link rel="prev" title="Customizing admin views for snippets" href="https://docs.wagtail.org/en/stable/topics/snippets/customizing.html" />
+    
+    <link rel="stylesheet" href="../_static/css/custom.css" />
+<script async type="text/javascript" src="../../../_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="wagtail" /><meta name="readthedocs-version-slug" content="stable" /><meta name="readthedocs-resolver-filename" content="/topics/streamfield.html" /><meta name="readthedocs-http-status" content="200" /></head>
+<body>
+    <script type="text/javascript" src="../_static/dist/blocking.js"></script>
+    <header class="container-fluid bg-primary">
+        <a class="btn btn-sm btn-light skip-to-content-link" href="streamfield.html#main">Skip to content</a>
+        <div class="container-fluid">
+            <div class="navbar navbar-expand-lg navbar-dark font-weight-bold">
+                    <a href="https://docs.wagtail.org/en/stable/index.html"
+                        title="Wagtail"
+                        class="logo navbar-brand"
+                    >
+                        
+                        Wagtail Documentation
+                    </a>
+                
+                
+                <button class="navbar-toggler btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="sr-only">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-12 col-lg-3 sidebar-container">
+                <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5 pr-lg-4">
+<div id="searchbox" class="searchbox mb-6 px-1" role="search">
+    <form id="search-form" action="https://docs.wagtail.org/en/stable/search.html" autocomplete="off" method="get" role="search">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text border-right-0 bg-white py-3 pl-3 pr-2"><span class="fas fa-search"></span></div>
+            </div>
+            <input class="form-control py-3 pr-3 pl-1 h-100 border-left-0" type="search" name="q" placeholder="Search documentation" aria-label="Search documentation" id="searchinput" />
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div><div class="site-toc">
+    <nav class="toc mt-3" aria-label="Main menu">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/getting_started/index.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/tutorial.html">Your first Wagtail site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/getting_started/quick_install.html">Quick install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/getting_started/demo_site.html">Demo site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/getting_started/integrating_into_django.html">Integrating Wagtail into a Django project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/getting_started/the_zen_of_wagtail.html">The Zen of Wagtail</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/index.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/customize_homepage.html">Customize your home page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/create_footer_for_all_pages.html">Create a footer for all pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/create_footer_for_all_pages.html#create-editable-footer-text-with-wagtail-snippets">Create editable footer text with Wagtail Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/set_up_site_menu.html">Set up site menu for linking to the homepage and other pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/style_your_site.html">Style and improve user experience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/create_contact_page.html">Create contact page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/create_portfolio_page.html">Create a portfolio page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/add_search.html">Add search to your site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/deployment.html">Deploy your site</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/index.html">Usage guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/pages.html">Page models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/writing_templates.html">Writing templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/images.html">How to use images in templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/search/index.html">Search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/search/indexing.html">Indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/search/searching.html">Searching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/search/backends.html">Backends</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/snippets/index.html">Snippets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/snippets/registering.html">Registering snippets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/snippets/rendering.html">Rendering snippets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/snippets/features.html">Optional features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/snippets/customizing.html">Customizing admin views for snippets</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="streamfield.html#">How to use StreamField for mixed content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/permissions.html">Permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/index.html">Advanced</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/index.html">Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/renditions.html">Generating renditions in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/animated_gifs.html">Animated GIF support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/image_file_formats.html">Image file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/custom_image_model.html">Custom image models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/changing_rich_text_representation.html">Changing rich text representation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/feature_detection.html">Feature detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/image_serve_view.html">Dynamic image serve view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/focal_points.html">Focal points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/title_generation_on_upload.html">Title generation on upload</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/documents/index.html">Documents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/documents/overview.html">Documents overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/documents/custom_document_model.html">Custom document model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/documents/custom_document_upload_form.html">Custom document upload form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/documents/storing_and_serving.html">Storing and serving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/documents/title_generation_on_upload.html">Title generation on upload</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/icons.html">Icons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/embeds.html">Embedded content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/tags.html">Tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/add_to_django_project.html">How to add Wagtail into an existing Django project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/privacy.html">Private pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/customization/index.html">Customizing Wagtail</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/customization/page_editing_interface.html">Customizing the editing interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/customization/custom_page_listings.html">Custom page listings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/customization/admin_templates.html">Customizing admin templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/customization/custom_user_models.html">Custom user models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/customization/streamfield_blocks.html">How to build custom StreamField blocks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/third_party_tutorials.html">Third-party tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/testing.html">Testing your Wagtail site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/api/index.html">Wagtail API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/api/v2/configuration.html">Wagtail API v2 configuration guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/api/v2/usage.html">Wagtail API v2 usage guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/api/django-ninja.html">How to set up Django Ninja</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/amp.html">How to build a site with AMP support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/accessibility_considerations.html">Accessibility considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/sustainability_considerations.html">Sustainability considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/boundblocks_and_values.html">About StreamField BoundBlocks and values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/multi_site_multi_instance_multi_tenancy.html">Multi-site, multi-instance and multi-tenancy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/formbuilder_routablepage_redirect.html">How to use a redirect with Form builder to prevent double submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/streamfield_migrations.html">StreamField migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/streamfield_validation.html">StreamField validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/reference_index.html">Manage the reference index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/headless.html">Headless support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/index.html">Extending</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/admin_views.html">Creating admin views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/generic_views.html">Generic views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/template_components.html">Template components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/forms.html">Using forms in admin views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/adding_reports.html">Adding reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/custom_tasks.html">Adding new Task types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/audit_log.html">Audit log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/custom_account_settings.html">Customizing the user account settings form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/customizing_group_views.html">Customizing group edit/create views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/custom_image_filters.html">Custom image filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/extending_client_side.html">Extending client-side behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/editor_api.html">Accessing the editor programmatically</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/client_side_panels.html">Accessing panels from client-side code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/rich_text_internals.html">Rich text internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/extending_draftail.html">Extending the Draftail editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/custom_bulk_actions.html">Adding custom bulk actions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/index.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/pages/index.html">Pages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/pages/theory.html">Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/pages/model_recipes.html">Recipes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/pages/queryset_reference.html">Page QuerySet reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/index.html">StreamField reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/blocks.html">StreamField block reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/widget_api.html">Form widget client-side API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/data_migrations.html">StreamField data migration reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/index.html">Contrib modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/settings.html">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/forms/index.html">Form builder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/forms/customization.html">Form builder customization</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/sitemaps.html">Sitemap generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/frontendcache.html">Frontend cache invalidator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/routablepage.html"><code class="docutils literal notranslate"><span class="pre">RoutablePageMixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/searchpromotions.html">Promoted search results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/simple_translation.html">Simple translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/table_block.html">TableBlock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/typed_table_block.html">Typed table block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/redirects.html">Redirects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/legacy_richtext.html">Legacy richtext</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/ui/index.html">Admin UI reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/ui/components.html">UI components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/ui/client.html">JavaScript components</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/management_commands.html">Management commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/models.html">Model reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/hooks.html">Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/signals.html">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/project_template.html">The project template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/jinja2.html">Jinja2 template support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/panels.html">Panels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/viewsets.html">Viewsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/deployment/index.html">Deployment &amp; hosting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/editor_manual/index.html">Editor’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/issue_tracking.html">Issue tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/first_contribution_guide.html">Your first contribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/developing.html">Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/styleguide.html">UI Styleguide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/general_guidelines.html">General coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/python_guidelines.html">Python coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/ui_guidelines.html">UI guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/documentation_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/documentation_modes.html">Writing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/translations.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/security.html">Reporting security issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/committing.html">Committing code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/index.html">Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/upgrading.html">Upgrading Wagtail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/release_process.html">Wagtail’s release process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/7.1.html">Wagtail 7.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/7.0.2.html">Wagtail 7.0.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/7.0.1.html">Wagtail 7.0.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/7.0.html">Wagtail 7.0 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.4.3.html">Wagtail 6.4.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.4.2.html">Wagtail 6.4.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.4.1.html">Wagtail 6.4.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.4.html">Wagtail 6.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.6.html">Wagtail 6.3.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.5.html">Wagtail 6.3.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.4.html">Wagtail 6.3.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.3.html">Wagtail 6.3.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.2.html">Wagtail 6.3.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.1.html">Wagtail 6.3.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.html">Wagtail 6.3 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.2.4.html">Wagtail 6.2.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.2.3.html">Wagtail 6.2.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.2.2.html">Wagtail 6.2.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.2.1.html">Wagtail 6.2.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.2.html">Wagtail 6.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.1.3.html">Wagtail 6.1.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.1.2.html">Wagtail 6.1.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.1.1.html">Wagtail 6.1.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.1.html">Wagtail 6.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.6.html">Wagtail 6.0.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.5.html">Wagtail 6.0.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.4.html">Wagtail 6.0.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.3.html">Wagtail 6.0.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.2.html">Wagtail 6.0.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.1.html">Wagtail 6.0.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.html">Wagtail 6.0 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.8.html">Wagtail 5.2.8 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.7.html">Wagtail 5.2.7 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.6.html">Wagtail 5.2.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.5.html">Wagtail 5.2.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.4.html">Wagtail 5.2.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.3.html">Wagtail 5.2.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.2.html">Wagtail 5.2.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.1.html">Wagtail 5.2.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.html">Wagtail 5.2 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.1.3.html">Wagtail 5.1.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.1.2.html">Wagtail 5.1.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.1.1.html">Wagtail 5.1.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.1.html">Wagtail 5.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.0.5.html">Wagtail 5.0.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.0.4.html">Wagtail 5.0.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.0.3.html">Wagtail 5.0.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.0.2.html">Wagtail 5.0.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.0.1.html">Wagtail 5.0.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.0.html">Wagtail 5.0 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.2.4.html">Wagtail 4.2.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.2.3.html">Wagtail 4.2.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.2.2.html">Wagtail 4.2.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.2.1.html">Wagtail 4.2.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.2.html">Wagtail 4.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.9.html">Wagtail 4.1.9 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.8.html">Wagtail 4.1.8 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.7.html">Wagtail 4.1.7 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.6.html">Wagtail 4.1.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.5.html">Wagtail 4.1.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.4.html">Wagtail 4.1.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.3.html">Wagtail 4.1.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.2.html">Wagtail 4.1.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.1.html">Wagtail 4.1.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.html">Wagtail 4.1 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.0.4.html">Wagtail 4.0.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.0.2.html">Wagtail 4.0.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.0.1.html">Wagtail 4.0.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.0.html">Wagtail 4.0 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/3.0.3.html">Wagtail 3.0.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/3.0.2.html">Wagtail 3.0.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/3.0.1.html">Wagtail 3.0.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/3.0.html">Wagtail 3.0 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.16.3.html">Wagtail 2.16.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.16.2.html">Wagtail 2.16.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.16.1.html">Wagtail 2.16.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.16.html">Wagtail 2.16 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.6.html">Wagtail 2.15.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.5.html">Wagtail 2.15.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.4.html">Wagtail 2.15.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.3.html">Wagtail 2.15.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.2.html">Wagtail 2.15.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.1.html">Wagtail 2.15.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.html">Wagtail 2.15 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.14.2.html">Wagtail 2.14.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.14.1.html">Wagtail 2.14.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.14.html">Wagtail 2.14 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.13.5.html">Wagtail 2.13.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.13.4.html">Wagtail 2.13.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.13.3.html">Wagtail 2.13.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.13.2.html">Wagtail 2.13.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.13.1.html">Wagtail 2.13.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.13.html">Wagtail 2.13 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.6.html">Wagtail 2.12.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.5.html">Wagtail 2.12.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.4.html">Wagtail 2.12.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.3.html">Wagtail 2.12.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.2.html">Wagtail 2.12.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.1.html">Wagtail 2.12.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.html">Wagtail 2.12 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.9.html">Wagtail 2.11.9 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.8.html">Wagtail 2.11.8 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.7.html">Wagtail 2.11.7 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.6.html">Wagtail 2.11.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.5.html">Wagtail 2.11.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.4.html">Wagtail 2.11.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.3.html">Wagtail 2.11.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.2.html">Wagtail 2.11.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.1.html">Wagtail 2.11.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.html">Wagtail 2.11 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.10.2.html">Wagtail 2.10.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.10.1.html">Wagtail 2.10.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.10.html">Wagtail 2.10 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.9.3.html">Wagtail 2.9.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.9.2.html">Wagtail 2.9.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.9.1.html">Wagtail 2.9.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.9.html">Wagtail 2.9 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.8.2.html">Wagtail 2.8.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.8.1.html">Wagtail 2.8.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.8.html">Wagtail 2.8 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.7.4.html">Wagtail 2.7.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.7.3.html">Wagtail 2.7.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.7.2.html">Wagtail 2.7.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.7.1.html">Wagtail 2.7.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.7.html">Wagtail 2.7 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.6.3.html">Wagtail 2.6.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.6.2.html">Wagtail 2.6.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.6.1.html">Wagtail 2.6.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.6.html">Wagtail 2.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.5.2.html">Wagtail 2.5.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.5.1.html">Wagtail 2.5.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.5.html">Wagtail 2.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.4.html">Wagtail 2.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.3.html">Wagtail 2.3 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.2.2.html">Wagtail 2.2.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.2.1.html">Wagtail 2.2.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.2.html">Wagtail 2.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.1.3.html">Wagtail 2.1.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.1.2.html">Wagtail 2.1.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.1.1.html">Wagtail 2.1.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.1.html">Wagtail 2.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.0.2.html">Wagtail 2.0.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.0.1.html">Wagtail 2.0.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.0.html">Wagtail 2.0 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.13.4.html">Wagtail 1.13.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.13.3.html">Wagtail 1.13.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.13.2.html">Wagtail 1.13.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.13.1.html">Wagtail 1.13.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.13.html">Wagtail 1.13 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.6.html">Wagtail 1.12.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.5.html">Wagtail 1.12.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.4.html">Wagtail 1.12.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.3.html">Wagtail 1.12.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.2.html">Wagtail 1.12.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.1.html">Wagtail 1.12.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.html">Wagtail 1.12 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.11.1.html">Wagtail 1.11.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.11.html">Wagtail 1.11 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.10.1.html">Wagtail 1.10.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.10.html">Wagtail 1.10 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.9.1.html">Wagtail 1.9.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.9.html">Wagtail 1.9 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.8.2.html">Wagtail 1.8.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.8.1.html">Wagtail 1.8.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.8.html">Wagtail 1.8 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.7.html">Wagtail 1.7 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.6.3.html">Wagtail 1.6.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.6.2.html">Wagtail 1.6.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.6.1.html">Wagtail 1.6.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.6.html">Wagtail 1.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.5.3.html">Wagtail 1.5.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.5.2.html">Wagtail 1.5.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.5.1.html">Wagtail 1.5.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.5.html">Wagtail 1.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.6.html">Wagtail 1.4.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.5.html">Wagtail 1.4.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.4.html">Wagtail 1.4.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.3.html">Wagtail 1.4.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.2.html">Wagtail 1.4.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.1.html">Wagtail 1.4.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.html">Wagtail 1.4 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.3.1.html">Wagtail 1.3.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.3.html">Wagtail 1.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.2.html">Wagtail 1.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.1.html">Wagtail 1.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.0.html">Wagtail 1.0 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.10.html">Wagtail 0.8.10 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.8.html">Wagtail 0.8.8 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.7.html">Wagtail 0.8.7 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.6.html">Wagtail 0.8.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.5.html">Wagtail 0.8.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.4.html">Wagtail 0.8.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.3.html">Wagtail 0.8.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.1.html">Wagtail 0.8.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.html">Wagtail 0.8 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.7.html">Wagtail 0.7 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.6.html">Wagtail 0.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.5.html">Wagtail 0.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.4.1.html">Wagtail 0.4.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.4.html">Wagtail 0.4 release notes</a></li>
+</ul>
+</li>
+</ul>
+
+    </nav>
+    <template data-toggle-item-template>
+        <button class="btn btn-sm btn-link toctree-expand" type="button">
+            <span class="sr-only">Toggle menu contents</span>
+        </button>
+    </template>
+</div>
+                    <div class="d-lg-none border-bottom">
+                        
+                    </div>
+                </div>
+            </aside>
+            <div class="col-12 col-lg-9 pt-5">
+                <header class="row align-items-baseline">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+    <ol class="breadcrumb m-0 p-0 bg-transparent">
+        <li class="breadcrumb-item"><a href="https://docs.wagtail.org/en/stable/index.html">Docs</a></li>
+            <li class="breadcrumb-item"><a href="https://docs.wagtail.org/en/stable/topics/index.html">Usage guide</a></li>
+        <li class="breadcrumb-item active" aria-current="page">How to use StreamField for mixed content</li>
+    </ol>
+</nav>
+                    </div>
+                    <div class="col-sm-12 col-lg-auto mt-3 mt-lg-3">
+                        <noscript>
+                            <p>JavaScript is required to toggle light/dark mode..</p>
+                        </noscript>
+                        <button id="wagtail-theme" class="btn btn-sm btn-light text-decoration-none" type="button">
+                            <span class="dark-only"><i class="fas fa-sun"></i> Light mode</span>
+                            <span class="light-only"><i class="fas fa-moon"></i> Dark mode</span>
+                        </button>
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/wagtail/wagtail/blob/main/docs/topics/streamfield.md" rel="nofollow">
+        <span class="btn-icon"><span class="fab fa-github"></span></span>
+        <span class="btn-text">Edit on GitHub</span>
+    </a>
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://docs.wagtail.org/en/stable/_sources/topics/streamfield.md.txt" rel="nofollow">
+        <span class="btn-icon"><span class="fas fa-code"></span></span>
+        <span class="btn-text">View source</span>
+    </a>
+                        
+                    </div>
+                </header>
+                <div class="row" >
+                    <div class="col-12">
+                        <hr class="w-100 my-4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
+                        <main role="main" id="main">
+    <section id="how-to-use-streamfield-for-mixed-content">
+<span id="streamfield-topic"></span><h1>How to use StreamField for mixed content<a class="headerlink" href="streamfield.html#how-to-use-streamfield-for-mixed-content" title="Link to this heading">¶</a></h1>
+<p>StreamField provides a content editing model suitable for pages that do not follow a fixed structure – such as blog posts or news stories – where the text may be interspersed with subheadings, images, pull quotes and video. It’s also suitable for more specialized content types, such as maps and charts (or, for a programming blog, code snippets). In this model, these different content types are represented as a sequence of ‘blocks’, which can be repeated and arranged in any order.</p>
+<p>For further background on StreamField, and why you would use it instead of a rich text field for the article body, see the blog post <a class="reference external" href="https://torchbox.com/blog/rich-text-fields-and-faster-horses/">Rich text fields and faster horses</a>.</p>
+<p>StreamField also offers a rich API to define your own block types, ranging from simple collections of sub-blocks (such as a ‘person’ block consisting of first name, surname, and photograph) to completely custom components with their own editing interface. Within the database, the StreamField content is stored as JSON, ensuring that the full informational content of the field is preserved, rather than just an HTML representation of it.</p>
+<section id="using-streamfield">
+<h2>Using StreamField<a class="headerlink" href="streamfield.html#using-streamfield" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">StreamField</span></code> is a model field that can be defined within your page model like any other field:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Page</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">StreamField</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail</span><span class="w"> </span><span class="kn">import</span> <span class="n">blocks</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.admin.panels</span><span class="w"> </span><span class="kn">import</span> <span class="n">FieldPanel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.images.blocks</span><span class="w"> </span><span class="kn">import</span> <span class="n">ImageBlock</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BlogPage</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="s2">&quot;Post date&quot;</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">StreamField</span><span class="p">([</span>
+        <span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">(</span><span class="n">form_classname</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)),</span>
+        <span class="p">(</span><span class="s1">&#39;paragraph&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()),</span>
+        <span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">ImageBlock</span><span class="p">()),</span>
+    <span class="p">])</span>
+
+    <span class="n">content_panels</span> <span class="o">=</span> <span class="n">Page</span><span class="o">.</span><span class="n">content_panels</span> <span class="o">+</span> <span class="p">[</span>
+        <span class="n">FieldPanel</span><span class="p">(</span><span class="s1">&#39;author&#39;</span><span class="p">),</span>
+        <span class="n">FieldPanel</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">),</span>
+        <span class="n">FieldPanel</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">),</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+<p>In this example, the body field of <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code> is defined as a <code class="docutils literal notranslate"><span class="pre">StreamField</span></code> where authors can compose content from three different block types: headings, paragraphs, and images, which can be used and repeated in any order. The block types available to authors are defined as a list of <code class="docutils literal notranslate"><span class="pre">(name,</span> <span class="pre">block_type)</span></code> tuples: ‘name’ is used to identify the block type within templates, and should follow the standard Python conventions for variable names: lower-case and underscores, no spaces.</p>
+<p>You can find the complete list of available block types in the <a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/blocks.html#streamfield-block-reference"><span class="std std-ref">StreamField block reference</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>StreamField is not a direct replacement for other field types such as RichTextField. If you need to migrate an existing field to StreamField, refer to <a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/streamfield_migrations.html#streamfield-migrating-richtext"><span class="std std-ref">Migrating RichTextFields to StreamField</span></a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While block definitions look similar to model fields, they are not the same thing. Blocks are only valid within a StreamField - using them in place of a model field will not work.</p>
+</div>
+</section>
+<section id="template-rendering">
+<span id="streamfield-template-rendering"></span><h2>Template rendering<a class="headerlink" href="streamfield.html#template-rendering" title="Link to this heading">¶</a></h2>
+<p>StreamField provides an HTML representation for the stream content as a whole, as well as for each individual block. To include this HTML into your page, use the <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">include_block</span> <span class="pre">%}</span></code> tag:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">load</span> <span class="nv">wagtailcore_tags</span> <span class="cp">%}</span>
+
+    ...
+
+<span class="cp">{%</span> <span class="k">include_block</span> <span class="nv">page.body</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>In the default rendering, each block of the stream is wrapped in a <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;block-my_block_name&quot;&gt;</span></code> element (where <code class="docutils literal notranslate"><span class="pre">my_block_name</span></code> is the block name given in the StreamField definition). If you wish to provide your own HTML markup, you can instead iterate over the field’s value, and invoke <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">include_block</span> <span class="pre">%}</span></code> on each block in turn:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">load</span> <span class="nv">wagtailcore_tags</span> <span class="cp">%}</span>
+
+    ...
+
+<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nb">block</span> <span class="k">in</span> <span class="nv">page.body</span> <span class="cp">%}</span>
+        <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span><span class="cp">{%</span> <span class="k">include_block</span> <span class="nb">block</span> <span class="cp">%}</span><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>For more control over the rendering of specific block types, each block object provides <code class="docutils literal notranslate"><span class="pre">block_type</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code> properties:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">load</span> <span class="nv">wagtailcore_tags</span> <span class="cp">%}</span>
+
+    ...
+
+<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nb">block</span> <span class="k">in</span> <span class="nv">page.body</span> <span class="cp">%}</span>
+        <span class="cp">{%</span> <span class="k">if</span> <span class="nb">block</span><span class="nv">.block_type</span> <span class="o">==</span> <span class="s1">&#39;heading&#39;</span> <span class="cp">%}</span>
+            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nb">block</span><span class="nv">.value</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
+            <span class="p">&lt;</span><span class="nt">section</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;block-</span><span class="cp">{{</span> <span class="nb">block</span><span class="nv">.block_type</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>
+                <span class="cp">{%</span> <span class="k">include_block</span> <span class="nb">block</span> <span class="cp">%}</span>
+            <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+        <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="combining-blocks">
+<h2>Combining blocks<a class="headerlink" href="streamfield.html#combining-blocks" title="Link to this heading">¶</a></h2>
+<p>In addition to using the built-in block types directly within StreamField, it’s possible to construct new block types by combining sub-blocks in various ways. Examples of this could include:</p>
+<ul class="simple">
+<li><p>An “image with caption” block consisting of an image chooser and a text field</p></li>
+<li><p>A “related links” section, where an author can provide any number of links to other pages</p></li>
+<li><p>A slideshow block, where each slide may be an image, text or video, arranged in any order</p></li>
+</ul>
+<p>Once a new block type has been built up in this way, you can use it anywhere where a built-in block type would be used - including using it as a component for yet another block type. For example, you could define an image gallery block where each item is an “image with caption” block.</p>
+<section id="structblock">
+<h3>StructBlock<a class="headerlink" href="streamfield.html#structblock" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">StructBlock</span></code> allows you to group several ‘child’ blocks together to be presented as a single block. The child blocks are passed to <code class="docutils literal notranslate"><span class="pre">StructBlock</span></code> as a list of <code class="docutils literal notranslate"><span class="pre">(name,</span> <span class="pre">block_type)</span></code> tuples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">body</span> <span class="o">=</span> <span class="n">StreamField</span><span class="p">([</span>
+<span class="hll">    <span class="p">(</span><span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">([</span>
+</span><span class="hll">        <span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()),</span>
+</span><span class="hll">        <span class="p">(</span><span class="s1">&#39;surname&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()),</span>
+</span><span class="hll">        <span class="p">(</span><span class="s1">&#39;photo&#39;</span><span class="p">,</span> <span class="n">ImageBlock</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+</span><span class="hll">        <span class="p">(</span><span class="s1">&#39;biography&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()),</span>
+</span><span class="hll">    <span class="p">])),</span>
+</span>    <span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">(</span><span class="n">form_classname</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;paragraph&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">ImageBlock</span><span class="p">()),</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+<p>When reading back the content of a StreamField (such as when rendering a template), the value of a StructBlock is a dict-like object with keys corresponding to the block names given in the definition:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nb">block</span> <span class="k">in</span> <span class="nv">page.body</span> <span class="cp">%}</span>
+        <span class="cp">{%</span> <span class="k">if</span> <span class="nb">block</span><span class="nv">.block_type</span> <span class="o">==</span> <span class="s1">&#39;person&#39;</span> <span class="cp">%}</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;person&quot;</span><span class="p">&gt;</span>
+                <span class="cp">{%</span> <span class="k">image</span> <span class="nb">block</span><span class="nv">.value.photo</span> <span class="nv">width-400</span> <span class="cp">%}</span>
+                <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nb">block</span><span class="nv">.value.first_name</span> <span class="cp">}}</span> <span class="cp">{{</span> <span class="nb">block</span><span class="nv">.value.surname</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+                <span class="cp">{{</span> <span class="nb">block</span><span class="nv">.value.biography</span> <span class="cp">}}</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
+            (rendering for other block types)
+        <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="subclassing-structblock">
+<h3>Subclassing <code class="docutils literal notranslate"><span class="pre">StructBlock</span></code><a class="headerlink" href="streamfield.html#subclassing-structblock" title="Link to this heading">¶</a></h3>
+<p>Placing a StructBlock’s list of child blocks inside a <code class="docutils literal notranslate"><span class="pre">StreamField</span></code> definition can often be hard to read, and makes it difficult for the same block to be reused in multiple places. As an alternative, <code class="docutils literal notranslate"><span class="pre">StructBlock</span></code> can be subclassed, with the child blocks defined as attributes on the subclass. The ‘person’ block in the above example could be rewritten as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">PersonBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">):</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()</span>
+    <span class="n">surname</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()</span>
+    <span class="n">photo</span> <span class="o">=</span> <span class="n">ImageBlock</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">biography</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">PersonBlock</span></code> can then be used in a <code class="docutils literal notranslate"><span class="pre">StreamField</span></code> definition in the same way as the built-in block types:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">body</span> <span class="o">=</span> <span class="n">StreamField</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="n">PersonBlock</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">(</span><span class="n">form_classname</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;paragraph&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">ImageBlock</span><span class="p">()),</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="block-icons">
+<span id="id1"></span><h3>Block icons<a class="headerlink" href="streamfield.html#block-icons" title="Link to this heading">¶</a></h3>
+<p>In the menu that content authors use to add new blocks to a StreamField, each block type has an associated icon. For StructBlock and other structural block types, a placeholder icon is used, since the purpose of these blocks is specific to your project. To set a custom icon, pass the option <code class="docutils literal notranslate"><span class="pre">icon</span></code> as either a keyword argument to <code class="docutils literal notranslate"><span class="pre">StructBlock</span></code>, or an attribute on a <code class="docutils literal notranslate"><span class="pre">Meta</span></code> class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">body</span> <span class="o">=</span> <span class="n">StreamField</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">([</span>
+        <span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()),</span>
+        <span class="p">(</span><span class="s1">&#39;surname&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()),</span>
+        <span class="p">(</span><span class="s1">&#39;photo&#39;</span><span class="p">,</span> <span class="n">ImageBlock</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+        <span class="p">(</span><span class="s1">&#39;biography&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()),</span>
+<span class="hll">    <span class="p">],</span> <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">)),</span>
+</span>    <span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">(</span><span class="n">form_classname</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;paragraph&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">ImageBlock</span><span class="p">()),</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">PersonBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">):</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()</span>
+    <span class="n">surname</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()</span>
+    <span class="n">photo</span> <span class="o">=</span> <span class="n">ImageBlock</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">biography</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()</span>
+
+<span class="hll">    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+</span><span class="hll">        <span class="n">icon</span> <span class="o">=</span> <span class="s1">&#39;user&#39;</span>
+</span></pre></div>
+</div>
+<p>For a list of icons available out of the box, see our <a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/icons.html#icons"><span class="std std-ref">icons overview</span></a>. Project-specific icons are also displayed in the <a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/styleguide.html#styleguide"><span class="std std-ref">styleguide</span></a>.</p>
+</section>
+<section id="grouping-blocks">
+<span id="block-grouping"></span><h3>Grouping blocks<a class="headerlink" href="streamfield.html#grouping-blocks" title="Link to this heading">¶</a></h3>
+<p>When a <code class="docutils literal notranslate"><span class="pre">StreamField</span></code> has a large number of different block types, the block picker menu can become long and difficult to scan. To help with this, you can organize related blocks into groups by passing the <code class="docutils literal notranslate"><span class="pre">group</span></code> option as a keyword argument or as an attribute on a <code class="docutils literal notranslate"><span class="pre">Meta</span></code> class. Grouped block types will show after all of the ungrouped (common) types, those with no <code class="docutils literal notranslate"><span class="pre">group</span></code> specified.</p>
+<p>Any blocks that share the same <code class="docutils literal notranslate"><span class="pre">group</span></code> name will be clustered together under that name as a heading in the menu, making the interface cleaner and more efficient for content authors.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.utils.translation</span><span class="w"> </span><span class="kn">import</span> <span class="n">gettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">StreamField</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail</span><span class="w"> </span><span class="kn">import</span> <span class="n">blocks</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Page</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BlogPage</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">StreamField</span><span class="p">([</span>
+        <span class="c1"># Standard blocks (will appear first, ungrouped)</span>
+        <span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">(</span><span class="n">icon</span><span class="o">=</span><span class="s1">&#39;title&#39;</span><span class="p">)),</span>
+        <span class="p">(</span><span class="s1">&#39;paragraph&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()),</span>
+
+        <span class="c1"># &quot;Call to action&quot; blocks, grouped together</span>
+        <span class="p">(</span><span class="s1">&#39;cta_button&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">([</span>
+            <span class="p">(</span><span class="s1">&#39;button_text&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()),</span>
+            <span class="p">(</span><span class="s1">&#39;button_link&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">URLBlock</span><span class="p">()),</span>
+<span class="hll">        <span class="p">],</span> <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;link&#39;</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;Call to action&#39;</span><span class="p">))),</span>
+</span><span class="hll">        <span class="p">(</span><span class="s1">&#39;signup_form&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">([],</span> <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;Call to action&#39;</span><span class="p">))),</span>
+</span><span class="hll">        <span class="p">(</span><span class="s1">&#39;featured_section&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">PageChooserBlock</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;Call to action&#39;</span><span class="p">))),</span>
+</span>    <span class="p">])</span>
+</pre></div>
+</div>
+<p>This will render a block picker menu where the <code class="docutils literal notranslate"><span class="pre">cta_button</span></code>, <code class="docutils literal notranslate"><span class="pre">signup_form</span></code>, and <code class="docutils literal notranslate"><span class="pre">featured_section</span></code> blocks all appear together under a “Call to action” heading.</p>
+<p>You can also define the group within a block’s <code class="docutils literal notranslate"><span class="pre">Meta</span></code> class, which is useful when creating reusable block classes. A <code class="docutils literal notranslate"><span class="pre">group</span></code> passed as a keyword argument will always override any <code class="docutils literal notranslate"><span class="pre">group</span></code> defined on the block’s <code class="docutils literal notranslate"><span class="pre">Meta</span></code> class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.utils.translation</span><span class="w"> </span><span class="kn">import</span> <span class="n">gettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CallToActionButtonBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">):</span>
+    <span class="n">button_text</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()</span>
+    <span class="n">button_link</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">URLBlock</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+<span class="hll">        <span class="n">group</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s1">&#39;Call to action&#39;</span><span class="p">)</span>
+</span>        <span class="n">icon</span> <span class="o">=</span> <span class="s1">&#39;link&#39;</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="s1">&#39;blocks/cta_button.html&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="listblock">
+<h3>ListBlock<a class="headerlink" href="streamfield.html#listblock" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ListBlock</span></code> defines a repeating block, allowing content authors to insert as many instances of a particular block type as they like. For example, a ‘gallery’ block consisting of multiple images can be defined as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">body</span> <span class="o">=</span> <span class="n">StreamField</span><span class="p">([</span>
+<span class="hll">    <span class="p">(</span><span class="s1">&#39;gallery&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">ListBlock</span><span class="p">(</span><span class="n">ImageBlock</span><span class="p">())),</span>
+</span>    <span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">(</span><span class="n">form_classname</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;paragraph&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">ImageBlock</span><span class="p">()),</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+<p>When reading back the content of a StreamField (such as when rendering a template), the value of a ListBlock is a list of child values:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nb">block</span> <span class="k">in</span> <span class="nv">page.body</span> <span class="cp">%}</span>
+        <span class="cp">{%</span> <span class="k">if</span> <span class="nb">block</span><span class="nv">.block_type</span> <span class="o">==</span> <span class="s1">&#39;gallery&#39;</span> <span class="cp">%}</span>
+            <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;gallery&quot;</span><span class="p">&gt;</span>
+                <span class="cp">{%</span> <span class="k">for</span> <span class="nv">img</span> <span class="k">in</span> <span class="nb">block</span><span class="nv">.value</span> <span class="cp">%}</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="cp">{%</span> <span class="k">image</span> <span class="nv">img</span> <span class="nv">width-400</span> <span class="cp">%}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
+            (rendering for other block types)
+        <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="streamblock">
+<h3>StreamBlock<a class="headerlink" href="streamfield.html#streamblock" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">StreamBlock</span></code> defines a set of child block types that can be mixed and repeated in any sequence, via the same mechanism as StreamField itself. For example, a carousel that supports both image and video slides could be defined as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">body</span> <span class="o">=</span> <span class="n">StreamField</span><span class="p">([</span>
+<span class="hll">    <span class="p">(</span><span class="s1">&#39;carousel&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">StreamBlock</span><span class="p">([</span>
+</span><span class="hll">        <span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">ImageBlock</span><span class="p">()),</span>
+</span><span class="hll">        <span class="p">(</span><span class="s1">&#39;video&#39;</span><span class="p">,</span> <span class="n">EmbedBlock</span><span class="p">()),</span>
+</span><span class="hll">    <span class="p">])),</span>
+</span>    <span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">(</span><span class="n">form_classname</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;paragraph&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">ImageBlock</span><span class="p">()),</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">StreamBlock</span></code> can also be subclassed in the same way as <code class="docutils literal notranslate"><span class="pre">StructBlock</span></code>, with the child blocks being specified as attributes on the class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">CarouselBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StreamBlock</span><span class="p">):</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">ImageBlock</span><span class="p">()</span>
+    <span class="n">video</span> <span class="o">=</span> <span class="n">EmbedBlock</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">icon</span> <span class="o">=</span> <span class="s1">&#39;image&#39;</span>
+</pre></div>
+</div>
+<p>A StreamBlock subclass defined in this way can also be passed to a <code class="docutils literal notranslate"><span class="pre">StreamField</span></code> definition, instead of passing a list of block types. This allows setting up a common set of block types to be used on multiple page types:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">CommonContentBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StreamBlock</span><span class="p">):</span>
+    <span class="n">heading</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">(</span><span class="n">form_classname</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)</span>
+    <span class="n">paragraph</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">ImageBlock</span><span class="p">()</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BlogPage</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">StreamField</span><span class="p">(</span><span class="n">CommonContentBlock</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>When reading back the content of a StreamField, the value of a StreamBlock is a sequence of block objects with <code class="docutils literal notranslate"><span class="pre">block_type</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code> properties, just like the top-level value of the StreamField itself.</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nb">block</span> <span class="k">in</span> <span class="nv">page.body</span> <span class="cp">%}</span>
+        <span class="cp">{%</span> <span class="k">if</span> <span class="nb">block</span><span class="nv">.block_type</span> <span class="o">==</span> <span class="s1">&#39;carousel&#39;</span> <span class="cp">%}</span>
+            <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;carousel&quot;</span><span class="p">&gt;</span>
+                <span class="cp">{%</span> <span class="k">for</span> <span class="nv">slide</span> <span class="k">in</span> <span class="nb">block</span><span class="nv">.value</span> <span class="cp">%}</span>
+                    <span class="cp">{%</span> <span class="k">if</span> <span class="nv">slide.block_type</span> <span class="o">==</span> <span class="s1">&#39;image&#39;</span> <span class="cp">%}</span>
+                        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;image&quot;</span><span class="p">&gt;</span><span class="cp">{%</span> <span class="k">image</span> <span class="nv">slide.value</span> <span class="nv">width-200</span> <span class="cp">%}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
+                        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;video&quot;</span><span class="p">&gt;</span><span class="cp">{%</span> <span class="k">include_block</span> <span class="nv">slide</span> <span class="cp">%}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+                <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
+            (rendering for other block types)
+        <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="limiting-block-counts">
+<h3>Limiting block counts<a class="headerlink" href="streamfield.html#limiting-block-counts" title="Link to this heading">¶</a></h3>
+<p>By default, a StreamField can contain an unlimited number of blocks. The <code class="docutils literal notranslate"><span class="pre">min_num</span></code> and <code class="docutils literal notranslate"><span class="pre">max_num</span></code> options on <code class="docutils literal notranslate"><span class="pre">StreamField</span></code> or <code class="docutils literal notranslate"><span class="pre">StreamBlock</span></code> allow you to set a minimum or a maximum number of blocks:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">body</span> <span class="o">=</span> <span class="n">StreamField</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">(</span><span class="n">form_classname</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;paragraph&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">ImageBlock</span><span class="p">()),</span>
+<span class="p">],</span> <span class="n">min_num</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_num</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Or equivalently:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">CommonContentBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StreamBlock</span><span class="p">):</span>
+    <span class="n">heading</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">(</span><span class="n">form_classname</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)</span>
+    <span class="n">paragraph</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">ImageBlock</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">min_num</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="n">max_num</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">block_counts</span></code> option can be used to set a minimum or maximum count for specific block types. This accepts a dict, mapping block names to a dict containing either or both <code class="docutils literal notranslate"><span class="pre">min_num</span></code> and <code class="docutils literal notranslate"><span class="pre">max_num</span></code>. For example, to permit between 1 and 3 ‘heading’ blocks:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">body</span> <span class="o">=</span> <span class="n">StreamField</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">(</span><span class="n">form_classname</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;paragraph&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">ImageBlock</span><span class="p">()),</span>
+<span class="p">],</span> <span class="n">block_counts</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;heading&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;min_num&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;max_num&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>Or equivalently:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">CommonContentBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StreamBlock</span><span class="p">):</span>
+    <span class="n">heading</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">(</span><span class="n">form_classname</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)</span>
+    <span class="n">paragraph</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">ImageBlock</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">block_counts</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;heading&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;min_num&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;max_num&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="per-block-templates">
+<span id="streamfield-per-block-templates"></span><h2>Per-block templates<a class="headerlink" href="streamfield.html#per-block-templates" title="Link to this heading">¶</a></h2>
+<p>By default, each block is rendered using simple, minimal HTML markup, or no markup at all. For example, a CharBlock value is rendered as plain text, while a ListBlock outputs its child blocks in a <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> wrapper. To override this with your own custom HTML rendering, you can pass a <code class="docutils literal notranslate"><span class="pre">template</span></code> argument to the block, giving the filename of a template file to be rendered. This is particularly useful for custom block types derived from StructBlock:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()),</span>
+        <span class="p">(</span><span class="s1">&#39;surname&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()),</span>
+        <span class="p">(</span><span class="s1">&#39;photo&#39;</span><span class="p">,</span> <span class="n">ImageBlock</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+        <span class="p">(</span><span class="s1">&#39;biography&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()),</span>
+    <span class="p">],</span>
+    <span class="n">template</span><span class="o">=</span><span class="s1">&#39;myapp/blocks/person.html&#39;</span><span class="p">,</span>
+    <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;user&#39;</span>
+<span class="p">))</span>
+</pre></div>
+</div>
+<p>Or, when defined as a subclass of StructBlock:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">PersonBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">):</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()</span>
+    <span class="n">surname</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()</span>
+    <span class="n">photo</span> <span class="o">=</span> <span class="n">ImageBlock</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">biography</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="s1">&#39;myapp/blocks/person.html&#39;</span>
+        <span class="n">icon</span> <span class="o">=</span> <span class="s1">&#39;user&#39;</span>
+</pre></div>
+</div>
+<p>Within the template, the block value is accessible as the variable <code class="docutils literal notranslate"><span class="pre">value</span></code>:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">load</span> <span class="nv">wagtailimages_tags</span> <span class="cp">%}</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;person&quot;</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">image</span> <span class="nv">value.photo</span> <span class="nv">width-400</span> <span class="cp">%}</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">value.first_name</span> <span class="cp">}}</span> <span class="cp">{{</span> <span class="nv">value.surname</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="cp">{{</span> <span class="nv">value.biography</span> <span class="cp">}}</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">first_name</span></code>, <code class="docutils literal notranslate"><span class="pre">surname</span></code>, <code class="docutils literal notranslate"><span class="pre">photo</span></code>, and <code class="docutils literal notranslate"><span class="pre">biography</span></code> are defined as blocks in their own right, this could also be written as:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">load</span> <span class="nv">wagtailcore_tags</span> <span class="nv">wagtailimages_tags</span> <span class="cp">%}</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;person&quot;</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">image</span> <span class="nv">value.photo</span> <span class="nv">width-400</span> <span class="cp">%}</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="cp">{%</span> <span class="k">include_block</span> <span class="nv">value.first_name</span> <span class="cp">%}</span> <span class="cp">{%</span> <span class="k">include_block</span> <span class="nv">value.surname</span> <span class="cp">%}</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">include_block</span> <span class="nv">value.biography</span> <span class="cp">%}</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Writing <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">my_block</span> <span class="pre">}}</span></code> is roughly equivalent to <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">include_block</span> <span class="pre">my_block</span> <span class="pre">%}</span></code>, but the short form is more restrictive, as it does not pass variables from the calling template such as <code class="docutils literal notranslate"><span class="pre">request</span></code> or <code class="docutils literal notranslate"><span class="pre">page</span></code>; for this reason, it is recommended that you only use it for simple values that do not render HTML of their own. For example, if our PersonBlock used the template:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">load</span> <span class="nv">wagtailimages_tags</span> <span class="cp">%}</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;person&quot;</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">image</span> <span class="nv">value.photo</span> <span class="nv">width-400</span> <span class="cp">%}</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">value.first_name</span> <span class="cp">}}</span> <span class="cp">{{</span> <span class="nv">value.surname</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+
+    <span class="cp">{%</span> <span class="k">if</span> <span class="nv">request.user.is_authenticated</span> <span class="cp">%}</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Contact this person<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+
+    <span class="cp">{{</span> <span class="nv">value.biography</span> <span class="cp">}}</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>then the <code class="docutils literal notranslate"><span class="pre">request.user.is_authenticated</span></code> test would not work correctly when rendering the block through a <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">...</span> <span class="pre">}}</span></code> tag:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="c">{# Incorrect: #}</span>
+
+<span class="cp">{%</span> <span class="k">for</span> <span class="nb">block</span> <span class="k">in</span> <span class="nv">page.body</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">if</span> <span class="nb">block</span><span class="nv">.block_type</span> <span class="o">==</span> <span class="s1">&#39;person&#39;</span> <span class="cp">%}</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="cp">{{</span> <span class="nb">block</span> <span class="cp">}}</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+
+<span class="c">{# Correct: #}</span>
+
+<span class="cp">{%</span> <span class="k">for</span> <span class="nb">block</span> <span class="k">in</span> <span class="nv">page.body</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">if</span> <span class="nb">block</span><span class="nv">.block_type</span> <span class="o">==</span> <span class="s1">&#39;person&#39;</span> <span class="cp">%}</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="cp">{%</span> <span class="k">include_block</span> <span class="nb">block</span> <span class="cp">%}</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>Like Django’s <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">include</span> <span class="pre">%}</span></code> tag, <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">include_block</span> <span class="pre">%}</span></code> also allows passing additional variables to the included template, through the syntax <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">include_block</span> <span class="pre">my_block</span> <span class="pre">with</span> <span class="pre">foo=&quot;bar&quot;</span> <span class="pre">%}</span></code>:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="c">{# In page template: #}</span>
+
+<span class="cp">{%</span> <span class="k">for</span> <span class="nb">block</span> <span class="k">in</span> <span class="nv">page.body</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">if</span> <span class="nb">block</span><span class="nv">.block_type</span> <span class="o">==</span> <span class="s1">&#39;person&#39;</span> <span class="cp">%}</span>
+        <span class="cp">{%</span> <span class="k">include_block</span> <span class="nb">block</span> <span class="k">with</span> <span class="nv">classname</span><span class="o">=</span><span class="s2">&quot;important&quot;</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+
+<span class="c">{# In PersonBlock template: #}</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">classname</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>
+    ...
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The syntax <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">include_block</span> <span class="pre">my_block</span> <span class="pre">with</span> <span class="pre">foo=&quot;bar&quot;</span> <span class="pre">only</span> <span class="pre">%}</span></code> is also supported, to specify that no variables from the parent template other than <code class="docutils literal notranslate"><span class="pre">foo</span></code> will be passed to the child template.</p>
+<p id="streamfield-get-context">As well as passing variables from the parent template, block subclasses can pass additional template variables of their own by overriding the <code class="docutils literal notranslate"><span class="pre">get_context</span></code> method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">EventBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">DateBlock</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">parent_context</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_context</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">parent_context</span><span class="o">=</span><span class="n">parent_context</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;is_happening_today&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">context</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="s1">&#39;myapp/blocks/event.html&#39;</span>
+</pre></div>
+</div>
+<p>In this example, the variable <code class="docutils literal notranslate"><span class="pre">is_happening_today</span></code> will be made available within the block template. The <code class="docutils literal notranslate"><span class="pre">parent_context</span></code> keyword argument is available when the block is rendered through an <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">include_block</span> <span class="pre">%}</span></code> tag, and is a dict of variables passed from the calling template.</p>
+<p id="streamfield-get-template">Similarly, a <code class="docutils literal notranslate"><span class="pre">get_template</span></code> method can be defined to dynamically select a template based on the block value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">EventBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">DateBlock</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">():</span>
+            <span class="k">return</span> <span class="s2">&quot;myapp/blocks/future_event.html&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;myapp/blocks/event.html&quot;</span>
+</pre></div>
+</div>
+<p>All block types, not just <code class="docutils literal notranslate"><span class="pre">StructBlock</span></code>, support the <code class="docutils literal notranslate"><span class="pre">template</span></code> property. However, for blocks that handle basic Python data types, such as <code class="docutils literal notranslate"><span class="pre">CharBlock</span></code> and <code class="docutils literal notranslate"><span class="pre">IntegerBlock</span></code>, there are some limitations on where the template will take effect. For further details, see <a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/boundblocks_and_values.html#boundblocks-and-values"><span class="std std-ref">About StreamField BoundBlocks and values</span></a>.</p>
+</section>
+<section id="configuring-block-previews">
+<span id="id2"></span><h2>Configuring block previews<a class="headerlink" href="streamfield.html#configuring-block-previews" title="Link to this heading">¶</a></h2>
+<p>StreamField blocks can have previews that will be shown inside the block picker when you add a block in the editor. To enable this feature, you must configure the preview value and template. You can also add a description to help users pick the right block for their content.</p>
+<p>You can do so by <a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/blocks.html#block-preview-arguments"><span class="std std-ref">passing the keyword arguments</span></a> <code class="docutils literal notranslate"><span class="pre">preview_value</span></code>, <code class="docutils literal notranslate"><span class="pre">preview_template</span></code>, and <code class="docutils literal notranslate"><span class="pre">description</span></code> when instantiating a block:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s2">&quot;quote&quot;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">TextBlock</span><span class="p">()),</span>
+        <span class="p">(</span><span class="s2">&quot;source&quot;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()),</span>
+    <span class="p">],</span>
+<span class="hll">    <span class="n">preview_value</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;This is the coolest CMS ever.&quot;</span><span class="p">,</span> <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;Willie Wagtail&quot;</span><span class="p">},</span>
+</span><span class="hll">    <span class="n">preview_template</span><span class="o">=</span><span class="s2">&quot;myapp/previews/blocks/quote.html&quot;</span><span class="p">,</span>
+</span><span class="hll">    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A quote with attribution to the source, rendered as a blockquote.&quot;</span><span class="p">,</span>
+</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>You can also set <code class="docutils literal notranslate"><span class="pre">preview_value</span></code>, <code class="docutils literal notranslate"><span class="pre">preview_template</span></code>, and <code class="docutils literal notranslate"><span class="pre">description</span></code> as attributes in the <code class="docutils literal notranslate"><span class="pre">Meta</span></code> class of the block. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">QuoteBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">TextBlock</span><span class="p">()</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+<span class="hll">        <span class="n">preview_value</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;This is the coolest CMS ever.&quot;</span><span class="p">,</span> <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;Willie Wagtail&quot;</span><span class="p">}</span>
+</span><span class="hll">        <span class="n">preview_template</span> <span class="o">=</span> <span class="s2">&quot;myapp/previews/blocks/quote.html&quot;</span>
+</span><span class="hll">        <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;A quote with attribution to the source, rendered as a blockquote.&quot;</span>
+</span></pre></div>
+</div>
+<p>For more details on the preview options, see the corresponding <a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/blocks.html#wagtail.blocks.Block.get_preview_value" title="wagtail.blocks.Block.get_preview_value"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_preview_value()</span></code></a>, <a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/blocks.html#wagtail.blocks.Block.get_preview_template" title="wagtail.blocks.Block.get_preview_template"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_preview_template()</span></code></a>, and <a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/blocks.html#wagtail.blocks.Block.get_description" title="wagtail.blocks.Block.get_description"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_description()</span></code></a> methods, as well as the <a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/blocks.html#wagtail.blocks.Block.get_preview_context" title="wagtail.blocks.Block.get_preview_context"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_preview_context()</span></code></a> method.</p>
+<p>In particular, the <code class="docutils literal notranslate"><span class="pre">get_preview_value()</span></code> method can be overridden to provide a dynamic preview value, such as from the database:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">myapp.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Quote</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">QuoteBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">):</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_preview_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">quote</span> <span class="o">=</span> <span class="n">Quote</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">quote</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">quote</span><span class="o">.</span><span class="n">source</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Alternatively, the <code class="docutils literal notranslate"><span class="pre">preview_value</span></code> can be defined as a callable.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">timezone</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.blocks</span><span class="w"> </span><span class="kn">import</span> <span class="n">DateBlock</span><span class="p">,</span> <span class="n">StreamBlock</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyStreamBlock</span><span class="p">(</span><span class="n">StreamBlock</span><span class="p">):</span>
+    <span class="c1"># ... other blocks</span>
+    <span class="n">date_block</span> <span class="o">=</span> <span class="n">DateBlock</span><span class="p">(</span>
+        <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;calendar&quot;</span><span class="p">,</span>
+<span class="hll">        <span class="n">preview_value</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">,</span>
+</span>        <span class="n">preview_template</span><span class="o">=</span><span class="s2">&quot;blocks/date_block_preview.html&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 7.1: </span>The <code class="docutils literal notranslate"><span class="pre">preview_value</span></code> can now be defined as a callable.</p>
+</div>
+<section id="overriding-the-global-preview-template">
+<span id="streamfield-global-preview-template"></span><h3>Overriding the global preview template<a class="headerlink" href="streamfield.html#overriding-the-global-preview-template" title="Link to this heading">¶</a></h3>
+<p>In many cases, you likely want to use the block’s real template that you already configure via <code class="docutils literal notranslate"><span class="pre">template</span></code> or <code class="docutils literal notranslate"><span class="pre">get_template</span></code> as described in <a class="reference internal" href="streamfield.html#streamfield-per-block-templates"><span class="std std-ref">Per-block templates</span></a>. However, such templates are only an HTML fragment for the block, whereas the preview requires a complete HTML document as the template.</p>
+<p>To avoid having to specify <code class="docutils literal notranslate"><span class="pre">preview_template</span></code> for each block, Wagtail provides a default preview template for all blocks. This template makes use of the <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">include_block</span> <span class="pre">%}</span></code> tag (as described in <a class="reference internal" href="streamfield.html#streamfield-template-rendering"><span class="std std-ref">Template rendering</span></a>), which will reuse your block’s specific template.</p>
+<p>Note that the default preview template does not include any static assets that may be necessary to render your blocks properly. If you only need to add static assets to the default preview template, you can skip specifying <code class="docutils literal notranslate"><span class="pre">preview_template</span></code> for each block and instead override the default template globally. You can do so by creating a <code class="docutils literal notranslate"><span class="pre">wagtailcore/shared/block_preview.html</span></code> template inside one of your <code class="docutils literal notranslate"><span class="pre">templates</span></code> directories (with a higher precedence than the <code class="docutils literal notranslate"><span class="pre">wagtail</span></code> app) with the following content:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;wagtailcore/shared/block_preview.html&quot;</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">load</span> <span class="nv">static</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">css</span> <span class="cp">%}</span>
+    <span class="cp">{{</span> <span class="nb">block</span><span class="nv">.super</span> <span class="cp">}}</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{%</span> <span class="k">static</span> <span class="s1">&#39;css/my-styles.css&#39;</span> <span class="cp">%}</span><span class="s">&quot;</span><span class="p">&gt;</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">js</span> <span class="cp">%}</span>
+    <span class="cp">{{</span> <span class="nb">block</span><span class="nv">.super</span> <span class="cp">}}</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{%</span> <span class="k">static</span> <span class="s1">&#39;js/my-script.js&#39;</span> <span class="cp">%}</span><span class="s">&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>For more details on overriding templates, see Django’s guide on <a class="reference external" href="https://docs.djangoproject.com/en/stable/howto/overriding-templates/" title="Django 5.2">How to override templates</a>.</p>
+<p>The global <code class="docutils literal notranslate"><span class="pre">wagtailcore/shared/block_preview.html</span></code> override will be used for all blocks by default. If you want to use a different template for a particular block, you can still specify <code class="docutils literal notranslate"><span class="pre">preview_template</span></code>, which will take precedence.</p>
+</section>
+<section id="turning-off-previews-for-a-specific-block">
+<span id="turning-off-block-previews"></span><h3>Turning off previews for a specific block<a class="headerlink" href="streamfield.html#turning-off-previews-for-a-specific-block" title="Link to this heading">¶</a></h3>
+<p>To turn off previews for a block, set <a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/blocks.html#wagtail.blocks.Block.is_previewable" title="wagtail.blocks.Block.is_previewable"><code class="xref py py-attr docutils literal notranslate"><span class="pre">is_previewable</span> <span class="pre">=</span> <span class="pre">False</span></code></a> on the block class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ConfigBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">):</span>
+    <span class="o">...</span>
+<span class="hll">    <span class="n">is_previewable</span> <span class="o">=</span> <span class="kc">False</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+<section id="customizations">
+<h2>Customizations<a class="headerlink" href="streamfield.html#customizations" title="Link to this heading">¶</a></h2>
+<p>All block types implement a common API for rendering their front-end and form representations, and storing and retrieving values to and from the database. By subclassing the various block classes and overriding these methods, all kinds of customizations are possible, from modifying the layout of StructBlock form fields to implementing completely new ways of combining blocks. For further details, see <a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/customization/streamfield_blocks.html#custom-streamfield-blocks"><span class="std std-ref">How to build custom StreamField blocks</span></a>.</p>
+</section>
+<section id="modifying-streamfield-data">
+<span id="id3"></span><h2>Modifying StreamField data<a class="headerlink" href="streamfield.html#modifying-streamfield-data" title="Link to this heading">¶</a></h2>
+<p>A StreamField’s value behaves as a list, and blocks can be inserted, overwritten, and deleted before saving the instance back to the database. A new item can be written to the list as a tuple of <em>(block_type, value)</em> - when read back, it will be returned as a <code class="docutils literal notranslate"><span class="pre">BoundBlock</span></code> object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace the first block with a new block of type &#39;heading&#39;</span>
+<span class="n">my_page</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">,</span> <span class="s2">&quot;My story&quot;</span><span class="p">)</span>
+
+<span class="c1"># Delete the last block</span>
+<span class="k">del</span> <span class="n">my_page</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Append a rich text block to the stream</span>
+<span class="n">my_page</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;paragraph&#39;</span><span class="p">,</span> <span class="s2">&quot;&lt;p&gt;And they all lived happily ever after.&lt;/p&gt;&quot;</span><span class="p">))</span>
+
+<span class="c1"># Save the updated data back to the database</span>
+<span class="n">my_page</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If a block extending a StructBlock is to be used inside of the StreamField’s value, the value of this block can be provided as a Python dict (similar to what is accepted by the block’s <code class="docutils literal notranslate"><span class="pre">.to_python</span></code> method).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail</span><span class="w"> </span><span class="kn">import</span> <span class="n">blocks</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UrlWithTextBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">StructBlock</span><span class="p">):</span>
+   <span class="n">url</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">URLBlock</span><span class="p">()</span>
+   <span class="n">text</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">TextBlock</span><span class="p">()</span>
+
+<span class="c1"># using this block inside the content</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://github.com/wagtail/&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;A very interesting and useful repo&#39;</span>
+<span class="p">}</span>
+
+<span class="c1"># append the new block to the stream as a tuple with the defined index for this block type</span>
+<span class="n">my_page</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span>
+<span class="n">my_page</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</section>
+<section id="retrieving-blocks-by-name">
+<span id="streamfield-retrieving-blocks-by-name"></span><h2>Retrieving blocks by name<a class="headerlink" href="streamfield.html#retrieving-blocks-by-name" title="Link to this heading">¶</a></h2>
+<p>StreamField values provide a <code class="docutils literal notranslate"><span class="pre">blocks_by_name</span></code> method for retrieving all blocks of a given name:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_page</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">blocks_by_name</span><span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">)</span>  <span class="c1"># returns a list of &#39;heading&#39; blocks</span>
+</pre></div>
+</div>
+<p>Calling <code class="docutils literal notranslate"><span class="pre">blocks_by_name</span></code> with no arguments returns a <code class="docutils literal notranslate"><span class="pre">dict</span></code>-like object, mapping block names to the list of blocks of that name. This is particularly useful in template code, where passing arguments isn’t possible:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Table of contents<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nv">heading_block</span> <span class="k">in</span> <span class="nv">page.body.blocks_by_name.heading</span> <span class="cp">%}</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">heading_block.value</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">first_block_by_name</span></code> method returns the first block of the given name in the stream, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no matching block is found:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hero_image</span> <span class="o">=</span> <span class="n">my_page</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">first_block_by_name</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">first_block_by_name</span></code> can also be called without arguments to return a <code class="docutils literal notranslate"><span class="pre">dict</span></code>-like mapping:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hero-image&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">page.body.first_block_by_name.image</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="search-considerations">
+<span id="streamfield-search"></span><h2>Search considerations<a class="headerlink" href="streamfield.html#search-considerations" title="Link to this heading">¶</a></h2>
+<p>Like any other field, content in a StreamField can be made searchable by adding the field to the model’s search_fields definition - see <a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/search/indexing.html#wagtailsearch-indexing-fields"><span class="std std-ref">Indexing extra fields</span></a>. By default, all text content from the stream will be added to the search index. If you wish to exclude certain block types from being indexed, pass the keyword argument <code class="docutils literal notranslate"><span class="pre">search_index=False</span></code> as part of the block’s definition. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">body</span> <span class="o">=</span> <span class="n">StreamField</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;normal_text&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;pull_quote&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">RichTextBlock</span><span class="p">(</span><span class="n">search_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;footnotes&#39;</span><span class="p">,</span> <span class="n">blocks</span><span class="o">.</span><span class="n">ListBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">CharBlock</span><span class="p">(),</span> <span class="n">search_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="custom-validation">
+<h2>Custom validation<a class="headerlink" href="streamfield.html#custom-validation" title="Link to this heading">¶</a></h2>
+<p>Custom validation logic can be added to blocks by overriding the block’s <code class="docutils literal notranslate"><span class="pre">clean</span></code> method. For more information, see <a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/streamfield_validation.html#streamfield-validation"><span class="std std-ref">StreamField validation</span></a>.</p>
+</section>
+<section id="migrations">
+<h2>Migrations<a class="headerlink" href="streamfield.html#migrations" title="Link to this heading">¶</a></h2>
+<p>Since StreamField data is stored as a single JSON field, rather than being arranged in a formal database structure, it will often be necessary to write data migrations when changing the data structure of a StreamField or converting to or from other field types. For more information on how StreamField interacts with Django’s migration system, and a guide to migrating rich text to StreamFields, see <a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/streamfield_migrations.html#streamfield-migrations"><span class="std std-ref">StreamField migrations</span></a>.</p>
+</section>
+</section>
+
+</main>
+                        <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
+    <a class="float-left" href="https://docs.wagtail.org/en/stable/topics/snippets/customizing.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>Customizing admin views for snippets
+    </a>
+    <a class="float-right" href="https://docs.wagtail.org/en/stable/topics/permissions.html" title="Next">
+        Permissions <span aria-hidden="true">&nbsp;→</span>
+    </a>
+</nav>
+                    </div>
+                    
+                    <nav class="col-12 col-lg-3 pb-4">
+                        <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
+                            <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
+                            <ul>
+<li><a class="reference internal" href="streamfield.html#">How to use StreamField for mixed content</a><ul>
+<li><a class="reference internal" href="streamfield.html#using-streamfield">Using StreamField</a></li>
+<li><a class="reference internal" href="streamfield.html#template-rendering">Template rendering</a></li>
+<li><a class="reference internal" href="streamfield.html#combining-blocks">Combining blocks</a><ul>
+<li><a class="reference internal" href="streamfield.html#structblock">StructBlock</a></li>
+<li><a class="reference internal" href="streamfield.html#subclassing-structblock">Subclassing <code class="docutils literal notranslate"><span class="pre">StructBlock</span></code></a></li>
+<li><a class="reference internal" href="streamfield.html#block-icons">Block icons</a></li>
+<li><a class="reference internal" href="streamfield.html#grouping-blocks">Grouping blocks</a></li>
+<li><a class="reference internal" href="streamfield.html#listblock">ListBlock</a></li>
+<li><a class="reference internal" href="streamfield.html#streamblock">StreamBlock</a></li>
+<li><a class="reference internal" href="streamfield.html#limiting-block-counts">Limiting block counts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="streamfield.html#per-block-templates">Per-block templates</a></li>
+<li><a class="reference internal" href="streamfield.html#configuring-block-previews">Configuring block previews</a><ul>
+<li><a class="reference internal" href="streamfield.html#overriding-the-global-preview-template">Overriding the global preview template</a></li>
+<li><a class="reference internal" href="streamfield.html#turning-off-previews-for-a-specific-block">Turning off previews for a specific block</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="streamfield.html#customizations">Customizations</a></li>
+<li><a class="reference internal" href="streamfield.html#modifying-streamfield-data">Modifying StreamField data</a></li>
+<li><a class="reference internal" href="streamfield.html#retrieving-blocks-by-name">Retrieving blocks by name</a></li>
+<li><a class="reference internal" href="streamfield.html#search-considerations">Search considerations</a></li>
+<li><a class="reference internal" href="streamfield.html#custom-validation">Custom validation</a></li>
+<li><a class="reference internal" href="streamfield.html#migrations">Migrations</a></li>
+</ul>
+</li>
+</ul>
+
+                        </div>
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid bg-primary text-light">
+        <div class="container">
+            <div class="row">
+        <div class="col p-4">
+            
+                <nav aria-label="Footer">
+                    <ul class="nav justify-content-center mb-2">
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="../../../features/index.html">Features</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="../../../about-wagtail/index.html"> About Wagtail</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="../../../services/index.html"> Services</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="../../../blog/index.html"> Blog</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="../../../packages/index.html"> Packages</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/developers/"> Developers</a></li>
+                        
+                    </ul>
+                </nav>
+            
+            <div class="text-center">
+                    &copy; Copyright 2025, Wagtail core team and contributors. BSD license
+            </div>
+            <div class="text-center text-white-50 font-italic mt-3">
+                <small>
+                    Created using
+                    <a class="text-white" href="https://github.com/wagtail/sphinx_wagtail_theme" rel="nofollow" target="_blank">
+                        Sphinx Wagtail Theme 6.5.0
+                    </a>
+                    and
+                    <a class="text-white" href="https://www.sphinx-doc.org/" rel="nofollow" target="_blank">
+                        Sphinx 7.4.7
+                    </a>
+                </small>
+            </div>
+        </div>
+    </div>
+        </div>
+    </footer>
+        <script src="../_static/documentation_options.js%3Fv=a9520c2f"></script>
+        <script src="../_static/doctools.js%3Fv=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js%3Fv=dc90522c"></script>
+        <script src="../_static/clipboard.min.js%3Fv=a7894cd8"></script>
+        <script src="../_static/copybutton.js%3Fv=f281be69"></script>
+        <script src="../_static/js/banner.js%3Fv=de95fe88"></script>
+        <script type="text/javascript" src="../_static/dist/theme.js"></script>
+        <script type="text/javascript" src="../_static/dist/vendor.js"></script>
+        <script type="text/javascript" src="../_static/searchtools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() { Search.loadIndex("../searchindex.js"); });
+        </script>
+        <script type="text/javascript" id="searchindexloader"></script>
+    
+    
+    <template data-promotion-banner="" data-clear-duration="90" data-date-until="2024-06-22">
+        <div class="promotion-banner">
+            <svg aria-hidden="true" viewBox="0 0 190 132" width="36" height="36"><defs><path id="a" d="M89.58 26.597C81.876 11.063 65.8.375 47.213.375S12.552 11.063 4.85 26.597C1.746 32.857 0 39.902 0 47.354c0 6.875 1.484 13.404 4.15 19.288 12.926 1.555 27.562 2.432 43.064 2.432 15.503 0 30.138-.877 43.064-2.432 2.667-5.884 4.152-12.413 4.152-19.288 0-7.452-1.747-14.497-4.85-20.757"/></defs><g fill="none" fill-rule="evenodd"><g><g><path fill="#DFDFDF" d="M49.467 127.165h4.465V86.51h-4.465"/><path fill="#DFDFDF" d="M55.836 127.153c0 2.677-2.18 4.847-4.87 4.847s-4.87-2.17-4.87-4.847c0-2.676 2.18-4.846 4.87-4.846s4.87 2.17 4.87 4.846M134.91 127.165h4.466V86.51h-4.465"/><path fill="#DFDFDF" d="M142.404 127.153c0 2.677-2.18 4.847-4.87 4.847s-4.87-2.17-4.87-4.847c0-2.676 2.18-4.846 4.87-4.846s4.87 2.17 4.87 4.846"/><path fill="#D23C2B" d="M94.975 86.13L0 70.85s2.768 30.56 94.975 30.56c92.208 0 94.976-30.56 94.976-30.56L94.976 86.13"/><path fill="#DE4D33" d="M189.95 69.77c0 12.38-42.52 22.415-94.975 22.415C42.523 92.185 0 82.15 0 69.77 0 57.394 42.523 47.36 94.975 47.36c52.454 0 94.974 10.035 94.974 22.413"/><path fill="#DE4D33" d="M189.95 69.77c0 12.38-42.52 22.415-94.975 22.415C42.523 92.185 0 82.15 0 69.77 0 57.394 42.523 47.36 94.975 47.36c52.454 0 94.974 10.035 94.974 22.413"/><g transform="translate(48.343)"><mask id="b" fill="#fff"><use href="#a"/></mask><use fill="#9FD6E4" href="#a"/><g mask="url(#b)"><g transform="translate(-25.858 10.068)"><path fill="#8DBEC9" d="M66.328 58.76h.987c6.65-.016 13.134-.195 19.39-.518-.003-.033-1.522-14.294-11.057-29.093-2.158 2.536-5.382 4.146-8.983 4.146-6.5 0-11.77-5.243-11.77-11.712 0-3.97 1.986-7.476 5.022-9.593-6.19-4.746-13.78-8.84-23.1-11.615C33 3.422 29.67 7.045 26.96 11.115c-1.033 1.55-1.98 3.16-2.826 4.828l-.015.03c-.01.017-.017.033-.025.05l-.036.07-.006.01-.09.18c-3.104 6.26-4.852 13.306-4.852 20.76 0 .757.02 1.51.054 2.26.288 6.045 1.725 11.79 4.098 17.026 12.926 1.554 27.562 2.43 43.064 2.43" opacity=".293"/><path fill="#FFF" fill-rule="nonzero" d="M85.573 11.186v5.07s-10.397-3.38-17.124 2.755c-4.894 4.447-5.302 9.427-3.06 16.095 22.018 0 25.483 10.76 25.483 10.76l-2.242-12.36 6.932-7.38c0-8.714-8.256-14.494-9.99-14.94z" opacity=".821"/><ellipse cx="86.568" cy="23.492" fill="#000" fill-rule="nonzero" opacity=".821" rx="2.249" ry="2.237"/><path fill="#000" fill-rule="nonzero" d="M90.537 45.566s-3.35-14.862-25.274-10.833c-2.232-6.715-1.826-11.64 3.045-16.204 6.598-6.18 16.95-2.777 16.95-2.777V10.65c-3.653-1.432-7.104-1.7-10.96-1.7-14.11 0-21.925 9.31-25.274 15.577L9.338 88.897l11.165-1.88L0 121.932l14.31-2.238L25.274 92.21c31.06 0 70.846-9.85 65.264-46.644zM104.556 33.56l-8.79-7.83-6.95 7.83" opacity=".821"/><path fill="#FFF" fill-rule="nonzero" d="M30.355 83.898s1.006-.177 2.818-.53c1.812-.356 4.328-.887 7.347-1.596 1.51-.355 3.12-.798 4.83-1.33 1.712-.53 3.523-1.063 5.234-1.77 1.812-.622 3.624-1.42 5.435-2.305 1.81-.886 3.522-1.86 5.132-3.013.402-.266.805-.53 1.208-.886l1.207-.886c.705-.62 1.51-1.24 2.215-1.95.704-.62 1.308-1.328 1.912-2.037l.906-1.063.402-.532.403-.532c.2-.354.503-.708.704-1.063.2-.354.402-.71.704-1.063.1-.177.2-.355.302-.532.1-.177.2-.354.302-.53.2-.356.402-.71.503-1.065l.907-2.126c.2-.71.503-1.42.704-2.04.202-.62.303-1.328.504-1.86.1-.62.202-1.152.302-1.772.1-.532.2-1.063.2-1.506.102-.443.102-.886.203-1.33.1-1.594.1-2.48.1-2.48l1.61.088s-.1.975-.202 2.57c-.1.443-.1.886-.2 1.33-.102.53-.102 1.062-.303 1.594-.1.53-.302 1.152-.402 1.772-.202.62-.403 1.24-.604 1.95-.203.708-.504 1.328-.806 2.126-.302.71-.604 1.417-1.007 2.215-.2.354-.402.71-.604 1.063-.1.177-.2.355-.302.532l-.3.53c-.202.356-.504.71-.705 1.153-.302.355-.503.71-.805 1.064-.1.176-.302.353-.403.53l-.402.532-.906 1.063c-.706.71-1.31 1.418-2.115 2.038-.704.71-1.51 1.24-2.314 1.95l-1.207.885c-.403.266-.805.532-1.31.798-1.71 1.063-3.52 2.038-5.333 2.924-1.81.797-3.723 1.595-5.535 2.215-1.812.62-3.623 1.152-5.334 1.595-1.71.443-3.32.886-4.93 1.152-3.02.62-5.637 1.152-7.448 1.417-1.61.53-2.617.708-2.617.708z" opacity=".821"/></g></g></g><path fill="#9FD6E4" d="M75.325 68.613h.002-.002"/><path fill="#C7462F" d="M95.425 69.054h-.174.175c15.502 0 30.138-.877 43.064-2.432 2.372-5.235 3.81-10.982 4.097-17.027-.288 6.045-1.725 11.792-4.098 17.027-12.927 1.555-27.563 2.432-43.065 2.432m-.23 0h-.114.114m-.198 0h-.085.086m-.18 0h-.07.07m-.192 0h-.034.034m-.178 0h-.008.008"/><path fill="#1D2533" d="M137.33 26.445l-.09-.18.09.18m-.095-.19l-.036-.072c.01.023.024.047.035.072m-.06-.12l-.015-.03.016.03"/><path fill="#FFFFFE" d="M31.976 65.48c0 1.978-3.635 3.58-8.118 3.58-4.484 0-8.118-1.602-8.118-3.58 0-1.977 3.634-3.58 8.118-3.58 4.483 0 8.118 1.603 8.118 3.58M170.26 65.48c0 1.978-3.634 3.58-8.118 3.58s-8.118-1.602-8.118-3.58c0-1.977 3.634-3.58 8.118-3.58s8.118 1.603 8.118 3.58M58.957 76.666c0 1.977-3.634 3.58-8.117 3.58-4.483 0-8.118-1.603-8.118-3.58 0-1.976 3.635-3.58 8.118-3.58 4.483 0 8.117 1.604 8.117 3.58M145.525 76.666c0 1.977-3.634 3.58-8.117 3.58-4.484 0-8.118-1.603-8.118-3.58 0-1.976 3.634-3.58 8.118-3.58 4.483 0 8.117 1.604 8.117 3.58M103.93 80.022c0 1.977-3.636 3.58-8.12 3.58-4.483 0-8.118-1.603-8.118-3.58 0-1.976 3.635-3.58 8.12-3.58 4.482 0 8.117 1.604 8.117 3.58"/></g></g></g></svg>
+            
+            
+            <a href="https://nl.wagtail.space/">
+                <div>
+                    <strong>Wagtail Space NL</strong>
+                    <br />12 &#x2013; 14 June 2024 in Arnhem, The Netherlands
+                </div>
+            </a>
+            <a href="https://us.wagtail.space/">
+                <div>
+                    <strong>Wagtail Space US</strong>
+                    <br />20 &#x2013; 22 June 2024 in Philadelphia, USA
+                </div>
+            </a>
+            <button class="close" aria-label="Hide banner" aria-expanded="true" type="button" data-clear="">&#x2715;</button>
+        </div>
+    </template>
+</body>
+</html>

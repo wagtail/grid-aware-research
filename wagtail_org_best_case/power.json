@@ -1,0 +1,11 @@
+{
+  "browser": "firefox",
+  "iterations": 1,
+  "firefox": {
+    "powerConsumption": true,
+    "geckoProfiler": true,
+    "geckoProfilerParams": {
+      "features": "power"
+    }
+  }
+}

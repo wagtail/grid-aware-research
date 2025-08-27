@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-content_root="../">
+<head>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <title>Your first Wagtail site &mdash; Wagtail Documentation 7.1 documentation</title>
+    
+        <link rel="shortcut icon" href="../_static/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../_static/dist/fontawesome.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/dist/theme.css%3Fv=310cf088.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css%3Fv=76b2166b.css" />
+            <link rel="search" title="Search" href="https://docs.wagtail.org/en/stable/search.html" />
+            <link rel="top" title="Wagtail Documentation 7.1 documentation" href="tutorial.html#" />
+            <link rel="up" title="Getting started" href="https://docs.wagtail.org/en/stable/getting_started/index.html" />
+            <link rel="next" title="Quick install" href="https://docs.wagtail.org/en/stable/getting_started/quick_install.html" />
+            <link rel="prev" title="Getting started" href="https://docs.wagtail.org/en/stable/getting_started/index.html" />
+    
+    <link rel="stylesheet" href="../_static/css/custom.css" />
+<meta name="readthedocs-project-slug" content="wagtail" /><meta name="readthedocs-version-slug" content="stable" /><meta name="readthedocs-resolver-filename" content="/getting_started/tutorial.html" /><meta name="readthedocs-http-status" content="200" /></head>
+<body>
+    
+    <header class="container-fluid bg-primary">
+        <a class="btn btn-sm btn-light skip-to-content-link" href="tutorial.html#main">Skip to content</a>
+        <div class="container-fluid">
+            <div class="navbar navbar-expand-lg navbar-dark font-weight-bold">
+                    <a href="https://docs.wagtail.org/en/stable/index.html"
+                        title="Wagtail"
+                        class="logo navbar-brand"
+                    >
+                        
+                        Wagtail Documentation
+                    </a>
+                
+                
+                <button class="navbar-toggler btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="sr-only">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-12 col-lg-3 sidebar-container">
+                <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5 pr-lg-4">
+<div id="searchbox" class="searchbox mb-6 px-1" role="search">
+    <form id="search-form" action="https://docs.wagtail.org/en/stable/search.html" autocomplete="off" method="get" role="search">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text border-right-0 bg-white py-3 pl-3 pr-2"><span class="fas fa-search"></span></div>
+            </div>
+            <input class="form-control py-3 pr-3 pl-1 h-100 border-left-0" type="search" name="q" placeholder="Search documentation" aria-label="Search documentation" id="searchinput" />
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div><div class="site-toc">
+    <nav class="toc mt-3" aria-label="Main menu">
+        <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="https://docs.wagtail.org/en/stable/getting_started/index.html">Getting started</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="tutorial.html#">Your first Wagtail site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/getting_started/quick_install.html">Quick install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/getting_started/demo_site.html">Demo site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/getting_started/integrating_into_django.html">Integrating Wagtail into a Django project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/getting_started/the_zen_of_wagtail.html">The Zen of Wagtail</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/index.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/customize_homepage.html">Customize your home page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/create_footer_for_all_pages.html">Create a footer for all pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/create_footer_for_all_pages.html#create-editable-footer-text-with-wagtail-snippets">Create editable footer text with Wagtail Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/set_up_site_menu.html">Set up site menu for linking to the homepage and other pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/style_your_site.html">Style and improve user experience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/create_contact_page.html">Create contact page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/create_portfolio_page.html">Create a portfolio page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/add_search.html">Add search to your site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/deployment.html">Deploy your site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/index.html">Usage guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/pages.html">Page models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/writing_templates.html">Writing templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/images.html">How to use images in templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/search/index.html">Search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/search/indexing.html">Indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/search/searching.html">Searching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/search/backends.html">Backends</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/snippets/index.html">Snippets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/snippets/registering.html">Registering snippets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/snippets/rendering.html">Rendering snippets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/snippets/features.html">Optional features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/snippets/customizing.html">Customizing admin views for snippets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/streamfield.html">How to use StreamField for mixed content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/permissions.html">Permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/index.html">Advanced</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/index.html">Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/renditions.html">Generating renditions in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/animated_gifs.html">Animated GIF support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/image_file_formats.html">Image file formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/custom_image_model.html">Custom image models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/changing_rich_text_representation.html">Changing rich text representation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/feature_detection.html">Feature detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/image_serve_view.html">Dynamic image serve view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/focal_points.html">Focal points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/images/title_generation_on_upload.html">Title generation on upload</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/documents/index.html">Documents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/documents/overview.html">Documents overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/documents/custom_document_model.html">Custom document model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/documents/custom_document_upload_form.html">Custom document upload form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/documents/storing_and_serving.html">Storing and serving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/documents/title_generation_on_upload.html">Title generation on upload</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/icons.html">Icons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/embeds.html">Embedded content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/tags.html">Tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/add_to_django_project.html">How to add Wagtail into an existing Django project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/privacy.html">Private pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/customization/index.html">Customizing Wagtail</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/customization/page_editing_interface.html">Customizing the editing interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/customization/custom_page_listings.html">Custom page listings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/customization/admin_templates.html">Customizing admin templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/customization/custom_user_models.html">Custom user models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/customization/streamfield_blocks.html">How to build custom StreamField blocks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/third_party_tutorials.html">Third-party tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/testing.html">Testing your Wagtail site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/api/index.html">Wagtail API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/api/v2/configuration.html">Wagtail API v2 configuration guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/api/v2/usage.html">Wagtail API v2 usage guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/api/django-ninja.html">How to set up Django Ninja</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/amp.html">How to build a site with AMP support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/accessibility_considerations.html">Accessibility considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/sustainability_considerations.html">Sustainability considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/boundblocks_and_values.html">About StreamField BoundBlocks and values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/multi_site_multi_instance_multi_tenancy.html">Multi-site, multi-instance and multi-tenancy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/formbuilder_routablepage_redirect.html">How to use a redirect with Form builder to prevent double submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/streamfield_migrations.html">StreamField migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/streamfield_validation.html">StreamField validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/reference_index.html">Manage the reference index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/headless.html">Headless support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/index.html">Extending</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/admin_views.html">Creating admin views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/generic_views.html">Generic views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/template_components.html">Template components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/forms.html">Using forms in admin views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/adding_reports.html">Adding reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/custom_tasks.html">Adding new Task types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/audit_log.html">Audit log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/custom_account_settings.html">Customizing the user account settings form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/customizing_group_views.html">Customizing group edit/create views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/custom_image_filters.html">Custom image filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/extending_client_side.html">Extending client-side behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/editor_api.html">Accessing the editor programmatically</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/client_side_panels.html">Accessing panels from client-side code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/rich_text_internals.html">Rich text internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/extending_draftail.html">Extending the Draftail editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/extending/custom_bulk_actions.html">Adding custom bulk actions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/index.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/pages/index.html">Pages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/pages/theory.html">Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/pages/model_recipes.html">Recipes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/pages/queryset_reference.html">Page QuerySet reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/index.html">StreamField reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/blocks.html">StreamField block reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/widget_api.html">Form widget client-side API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/streamfield/data_migrations.html">StreamField data migration reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/index.html">Contrib modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/settings.html">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/forms/index.html">Form builder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/forms/customization.html">Form builder customization</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/sitemaps.html">Sitemap generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/frontendcache.html">Frontend cache invalidator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/routablepage.html"><code class="docutils literal notranslate"><span class="pre">RoutablePageMixin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/searchpromotions.html">Promoted search results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/simple_translation.html">Simple translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/table_block.html">TableBlock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/typed_table_block.html">Typed table block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/redirects.html">Redirects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/contrib/legacy_richtext.html">Legacy richtext</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/ui/index.html">Admin UI reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/ui/components.html">UI components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/ui/client.html">JavaScript components</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/management_commands.html">Management commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/models.html">Model reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/hooks.html">Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/signals.html">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/project_template.html">The project template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/jinja2.html">Jinja2 template support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/panels.html">Panels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/viewsets.html">Viewsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/deployment/index.html">Deployment &amp; hosting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/editor_manual/index.html">Editor’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/issue_tracking.html">Issue tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/first_contribution_guide.html">Your first contribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/developing.html">Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/styleguide.html">UI Styleguide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/general_guidelines.html">General coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/python_guidelines.html">Python coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/ui_guidelines.html">UI guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/documentation_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/documentation_modes.html">Writing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/translations.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/security.html">Reporting security issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/contributing/committing.html">Committing code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/index.html">Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/upgrading.html">Upgrading Wagtail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/release_process.html">Wagtail’s release process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/7.1.html">Wagtail 7.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/7.0.2.html">Wagtail 7.0.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/7.0.1.html">Wagtail 7.0.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/7.0.html">Wagtail 7.0 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.4.3.html">Wagtail 6.4.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.4.2.html">Wagtail 6.4.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.4.1.html">Wagtail 6.4.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.4.html">Wagtail 6.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.6.html">Wagtail 6.3.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.5.html">Wagtail 6.3.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.4.html">Wagtail 6.3.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.3.html">Wagtail 6.3.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.2.html">Wagtail 6.3.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.1.html">Wagtail 6.3.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.3.html">Wagtail 6.3 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.2.4.html">Wagtail 6.2.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.2.3.html">Wagtail 6.2.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.2.2.html">Wagtail 6.2.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.2.1.html">Wagtail 6.2.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.2.html">Wagtail 6.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.1.3.html">Wagtail 6.1.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.1.2.html">Wagtail 6.1.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.1.1.html">Wagtail 6.1.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.1.html">Wagtail 6.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.6.html">Wagtail 6.0.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.5.html">Wagtail 6.0.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.4.html">Wagtail 6.0.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.3.html">Wagtail 6.0.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.2.html">Wagtail 6.0.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.1.html">Wagtail 6.0.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/6.0.html">Wagtail 6.0 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.8.html">Wagtail 5.2.8 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.7.html">Wagtail 5.2.7 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.6.html">Wagtail 5.2.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.5.html">Wagtail 5.2.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.4.html">Wagtail 5.2.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.3.html">Wagtail 5.2.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.2.html">Wagtail 5.2.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.1.html">Wagtail 5.2.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.2.html">Wagtail 5.2 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.1.3.html">Wagtail 5.1.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.1.2.html">Wagtail 5.1.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.1.1.html">Wagtail 5.1.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.1.html">Wagtail 5.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.0.5.html">Wagtail 5.0.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.0.4.html">Wagtail 5.0.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.0.3.html">Wagtail 5.0.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.0.2.html">Wagtail 5.0.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.0.1.html">Wagtail 5.0.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/5.0.html">Wagtail 5.0 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.2.4.html">Wagtail 4.2.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.2.3.html">Wagtail 4.2.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.2.2.html">Wagtail 4.2.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.2.1.html">Wagtail 4.2.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.2.html">Wagtail 4.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.9.html">Wagtail 4.1.9 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.8.html">Wagtail 4.1.8 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.7.html">Wagtail 4.1.7 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.6.html">Wagtail 4.1.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.5.html">Wagtail 4.1.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.4.html">Wagtail 4.1.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.3.html">Wagtail 4.1.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.2.html">Wagtail 4.1.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.1.html">Wagtail 4.1.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.1.html">Wagtail 4.1 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.0.4.html">Wagtail 4.0.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.0.2.html">Wagtail 4.0.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.0.1.html">Wagtail 4.0.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/4.0.html">Wagtail 4.0 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/3.0.3.html">Wagtail 3.0.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/3.0.2.html">Wagtail 3.0.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/3.0.1.html">Wagtail 3.0.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/3.0.html">Wagtail 3.0 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.16.3.html">Wagtail 2.16.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.16.2.html">Wagtail 2.16.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.16.1.html">Wagtail 2.16.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.16.html">Wagtail 2.16 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.6.html">Wagtail 2.15.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.5.html">Wagtail 2.15.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.4.html">Wagtail 2.15.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.3.html">Wagtail 2.15.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.2.html">Wagtail 2.15.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.1.html">Wagtail 2.15.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.15.html">Wagtail 2.15 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.14.2.html">Wagtail 2.14.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.14.1.html">Wagtail 2.14.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.14.html">Wagtail 2.14 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.13.5.html">Wagtail 2.13.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.13.4.html">Wagtail 2.13.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.13.3.html">Wagtail 2.13.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.13.2.html">Wagtail 2.13.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.13.1.html">Wagtail 2.13.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.13.html">Wagtail 2.13 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.6.html">Wagtail 2.12.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.5.html">Wagtail 2.12.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.4.html">Wagtail 2.12.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.3.html">Wagtail 2.12.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.2.html">Wagtail 2.12.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.1.html">Wagtail 2.12.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.12.html">Wagtail 2.12 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.9.html">Wagtail 2.11.9 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.8.html">Wagtail 2.11.8 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.7.html">Wagtail 2.11.7 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.6.html">Wagtail 2.11.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.5.html">Wagtail 2.11.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.4.html">Wagtail 2.11.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.3.html">Wagtail 2.11.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.2.html">Wagtail 2.11.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.1.html">Wagtail 2.11.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.11.html">Wagtail 2.11 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.10.2.html">Wagtail 2.10.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.10.1.html">Wagtail 2.10.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.10.html">Wagtail 2.10 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.9.3.html">Wagtail 2.9.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.9.2.html">Wagtail 2.9.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.9.1.html">Wagtail 2.9.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.9.html">Wagtail 2.9 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.8.2.html">Wagtail 2.8.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.8.1.html">Wagtail 2.8.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.8.html">Wagtail 2.8 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.7.4.html">Wagtail 2.7.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.7.3.html">Wagtail 2.7.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.7.2.html">Wagtail 2.7.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.7.1.html">Wagtail 2.7.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.7.html">Wagtail 2.7 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.6.3.html">Wagtail 2.6.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.6.2.html">Wagtail 2.6.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.6.1.html">Wagtail 2.6.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.6.html">Wagtail 2.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.5.2.html">Wagtail 2.5.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.5.1.html">Wagtail 2.5.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.5.html">Wagtail 2.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.4.html">Wagtail 2.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.3.html">Wagtail 2.3 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.2.2.html">Wagtail 2.2.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.2.1.html">Wagtail 2.2.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.2.html">Wagtail 2.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.1.3.html">Wagtail 2.1.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.1.2.html">Wagtail 2.1.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.1.1.html">Wagtail 2.1.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.1.html">Wagtail 2.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.0.2.html">Wagtail 2.0.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.0.1.html">Wagtail 2.0.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/2.0.html">Wagtail 2.0 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.13.4.html">Wagtail 1.13.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.13.3.html">Wagtail 1.13.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.13.2.html">Wagtail 1.13.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.13.1.html">Wagtail 1.13.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.13.html">Wagtail 1.13 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.6.html">Wagtail 1.12.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.5.html">Wagtail 1.12.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.4.html">Wagtail 1.12.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.3.html">Wagtail 1.12.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.2.html">Wagtail 1.12.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.1.html">Wagtail 1.12.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.12.html">Wagtail 1.12 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.11.1.html">Wagtail 1.11.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.11.html">Wagtail 1.11 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.10.1.html">Wagtail 1.10.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.10.html">Wagtail 1.10 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.9.1.html">Wagtail 1.9.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.9.html">Wagtail 1.9 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.8.2.html">Wagtail 1.8.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.8.1.html">Wagtail 1.8.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.8.html">Wagtail 1.8 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.7.html">Wagtail 1.7 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.6.3.html">Wagtail 1.6.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.6.2.html">Wagtail 1.6.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.6.1.html">Wagtail 1.6.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.6.html">Wagtail 1.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.5.3.html">Wagtail 1.5.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.5.2.html">Wagtail 1.5.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.5.1.html">Wagtail 1.5.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.5.html">Wagtail 1.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.6.html">Wagtail 1.4.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.5.html">Wagtail 1.4.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.4.html">Wagtail 1.4.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.3.html">Wagtail 1.4.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.2.html">Wagtail 1.4.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.1.html">Wagtail 1.4.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.4.html">Wagtail 1.4 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.3.1.html">Wagtail 1.3.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.3.html">Wagtail 1.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.2.html">Wagtail 1.2 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.1.html">Wagtail 1.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/1.0.html">Wagtail 1.0 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.10.html">Wagtail 0.8.10 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.8.html">Wagtail 0.8.8 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.7.html">Wagtail 0.8.7 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.6.html">Wagtail 0.8.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.5.html">Wagtail 0.8.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.4.html">Wagtail 0.8.4 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.3.html">Wagtail 0.8.3 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.1.html">Wagtail 0.8.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.8.html">Wagtail 0.8 (LTS) release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.7.html">Wagtail 0.7 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.6.html">Wagtail 0.6 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.5.html">Wagtail 0.5 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.4.1.html">Wagtail 0.4.1 release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/0.4.html">Wagtail 0.4 release notes</a></li>
+</ul>
+</li>
+</ul>
+
+    </nav>
+    <template data-toggle-item-template>
+        <button class="btn btn-sm btn-link toctree-expand" type="button">
+            <span class="sr-only">Toggle menu contents</span>
+        </button>
+    </template>
+</div>
+                    <div class="d-lg-none border-bottom">
+                        
+                    </div>
+                </div>
+            </aside>
+            <div class="col-12 col-lg-9 pt-5">
+                <header class="row align-items-baseline">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+    <ol class="breadcrumb m-0 p-0 bg-transparent">
+        <li class="breadcrumb-item"><a href="https://docs.wagtail.org/en/stable/index.html">Docs</a></li>
+            <li class="breadcrumb-item"><a href="https://docs.wagtail.org/en/stable/getting_started/index.html">Getting started</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Your first Wagtail site</li>
+    </ol>
+</nav>
+                    </div>
+                    <div class="col-sm-12 col-lg-auto mt-3 mt-lg-3">
+                        <noscript>
+                            <p>JavaScript is required to toggle light/dark mode..</p>
+                        </noscript>
+                        <button id="wagtail-theme" class="btn btn-sm btn-light text-decoration-none" type="button">
+                            <span class="dark-only"><i class="fas fa-sun"></i> Light mode</span>
+                            <span class="light-only"><i class="fas fa-moon"></i> Dark mode</span>
+                        </button>
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/wagtail/wagtail/blob/main/docs/getting_started/tutorial.md" rel="nofollow">
+        <span class="btn-icon"><span class="fab fa-github"></span></span>
+        <span class="btn-text">Edit on GitHub</span>
+    </a>
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://docs.wagtail.org/en/stable/_sources/getting_started/tutorial.md.txt" rel="nofollow">
+        <span class="btn-icon"><span class="fas fa-code"></span></span>
+        <span class="btn-text">View source</span>
+    </a>
+                        
+                    </div>
+                </header>
+                <div class="row" >
+                    <div class="col-12">
+                        <hr class="w-100 my-4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
+                        <main role="main" id="main">
+    <section id="your-first-wagtail-site">
+<h1>Your first Wagtail site<a class="headerlink" href="tutorial.html#your-first-wagtail-site" title="Link to this heading">¶</a></h1>
+<p>This tutorial shows you how to build a blog using Wagtail. Also, the tutorial gives you hands-on experience with some of Wagtail’s features.</p>
+<p>To complete this tutorial, we recommend that you have some basic programming knowledge, as well as an understanding of web development concepts. A basic understanding of Python and the Django framework ensures a more grounded understanding of this tutorial, but it’s not mandatory.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to add Wagtail to an existing Django project instead, see <a class="reference internal" href="https://docs.wagtail.org/en/stable/getting_started/integrating_into_django.html"><span class="doc std std-doc">Integrating Wagtail into a Django project</span></a>.</p>
+</div>
+<section id="install-and-run-wagtail">
+<h2>Install and run Wagtail<a class="headerlink" href="tutorial.html#install-and-run-wagtail" title="Link to this heading">¶</a></h2>
+<section id="install-dependencies">
+<h3>Install dependencies<a class="headerlink" href="tutorial.html#install-dependencies" title="Link to this heading">¶</a></h3>
+<p>View the <a class="reference internal" href="https://docs.wagtail.org/en/stable/releases/upgrading.html#compatible-django-python-versions"><span class="std std-ref">compatible versions of Python</span></a> that Wagtail supports.</p>
+<p>To check if you have an appropriate version of Python 3, run the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
+<span class="c1"># Or:</span>
+python3<span class="w"> </span>--version
+<span class="c1"># **On Windows** (cmd.exe, with the Python Launcher for Windows):</span>
+py<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>If none of the preceding commands return a version number, or return a version lower than 3.9, then <a class="reference external" href="https://www.python.org/downloads/">install Python 3</a>.</p>
+</section>
+<section id="create-and-activate-a-virtual-environment">
+<span id="virtual-environment-creation"></span><h3>Create and activate a virtual environment<a class="headerlink" href="tutorial.html#create-and-activate-a-virtual-environment" title="Link to this heading">¶</a></h3>
+<p>This tutorial recommends using a virtual environment, which isolates installed dependencies from other projects.
+This tutorial uses <a class="reference external" href="https://docs.python.org/3/tutorial/venv.html" title="Python 3.13"><code class="docutils literal notranslate"><span class="pre">venv</span></code></a>, which is packaged with Python 3. On Ubuntu, it may be necessary to run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3-venv</span></code> to install it.</p>
+<p><strong>On Windows</strong> (cmd.exe), run the following command to create a virtual environment:</p>
+<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="go">py -m venv mysite\env</span>
+</pre></div>
+</div>
+<p>Activate this virtual environment using:</p>
+<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="go">mysite\env\Scripts\activate.bat</span>
+
+<span class="go"># if mysite\env\Scripts\activate.bat doesn&#39;t work, run:</span>
+
+<span class="go">mysite\env\Scripts\activate</span>
+</pre></div>
+</div>
+<p><strong>On GNU/Linux or MacOS</strong> (bash):</p>
+<p>Create the virtual environment using:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>mysite/env
+</pre></div>
+</div>
+<p>Activate the virtual environment using:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>mysite/env/bin/activate
+</pre></div>
+</div>
+<p>Upon activation, your command line will show <code class="docutils literal notranslate"><span class="pre">(env)</span></code> to indicate that you’re now working within this virtual environment.</p>
+<p><strong>For other shells</strong> see the <a class="reference external" href="https://docs.python.org/3/tutorial/venv.html" title="Python 3.13"><code class="docutils literal notranslate"><span class="pre">venv</span></code> documentation</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’re using version control such as git, then <code class="docutils literal notranslate"><span class="pre">mysite</span></code> is the directory for your project.
+You must exclude the <code class="docutils literal notranslate"><span class="pre">env</span></code> directory from any version control.</p>
+</div>
+</section>
+<section id="install-wagtail">
+<h3>Install Wagtail<a class="headerlink" href="tutorial.html#install-wagtail" title="Link to this heading">¶</a></h3>
+<p>To install Wagtail and its dependencies, use pip, which is packaged with Python:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>wagtail
+</pre></div>
+</div>
+</section>
+<section id="generate-your-site">
+<h3>Generate your site<a class="headerlink" href="tutorial.html#generate-your-site" title="Link to this heading">¶</a></h3>
+<p>Wagtail provides a <code class="docutils literal notranslate"><span class="pre">start</span></code> command similar to <code class="docutils literal notranslate"><span class="pre">django-admin</span> <span class="pre">startproject</span></code>. Running <code class="docutils literal notranslate"><span class="pre">wagtail</span> <span class="pre">start</span> <span class="pre">mysite</span></code> in your project generates a new <code class="docutils literal notranslate"><span class="pre">mysite</span></code> folder with a few Wagtail-specific extras, including the required project settings, a “home” app with a blank <code class="docutils literal notranslate"><span class="pre">HomePage</span></code> model and basic templates, and a sample “search” app.</p>
+<p>Because the folder <code class="docutils literal notranslate"><span class="pre">mysite</span></code> was already created by <code class="docutils literal notranslate"><span class="pre">venv</span></code>, run <code class="docutils literal notranslate"><span class="pre">wagtail</span> <span class="pre">start</span></code> with an additional argument to specify the destination directory:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wagtail<span class="w"> </span>start<span class="w"> </span>mysite<span class="w"> </span>mysite
+</pre></div>
+</div>
+<p>Here is the generated project structure:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mysite/
+├── .dockerignore
+├── Dockerfile
+├── home/
+├── manage.py*
+├── mysite/
+├── requirements.txt
+└── search/
+</pre></div>
+</div>
+<!-- Generated with: tree -a -L 1 -F -I env mysite -->
+</section>
+<section id="install-project-dependencies">
+<h3>Install project dependencies<a class="headerlink" href="tutorial.html#install-project-dependencies" title="Link to this heading">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>mysite
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>This ensures that you have the relevant versions of Wagtail, Django, and any other dependencies for the project that you’ve just created.
+The <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file contains all the dependencies needed to run the project.</p>
+</section>
+<section id="create-the-database">
+<h3>Create the database<a class="headerlink" href="tutorial.html#create-the-database" title="Link to this heading">¶</a></h3>
+<p>By default, your database is SQLite. To match your database tables with your project’s models, run the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</pre></div>
+</div>
+<p>This command ensures that the tables in your database match the models in your project. Every time you alter your model, then you must run the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">migrate</span></code> command to update the database. For example, if you add a field to a model, then you must run the command.</p>
+</section>
+<section id="create-an-admin-user">
+<h3>Create an admin user<a class="headerlink" href="tutorial.html#create-an-admin-user" title="Link to this heading">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>createsuperuser
+</pre></div>
+</div>
+<p>This prompts you to create a new admin user account with full permissions. It’s important to note that for security reasons, the password text won’t be visible while typing.</p>
+</section>
+<section id="start-the-server">
+<h3>Start the server<a class="headerlink" href="tutorial.html#start-the-server" title="Link to this heading">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+</div>
+<p>After the server starts, go to <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> to see Wagtail’s welcome page:</p>
+<p></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tutorial uses <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8000</span></code> as the URL for your development server but depending on your setup, this could be a different IP address or port. Please read the console output of <code class="docutils literal notranslate"><span class="pre">manage.py</span> <span class="pre">runserver</span></code> to determine the correct URL for your local site.</p>
+</div>
+<p>You can now access the <a class="reference external" href="https://guide.wagtail.org/en-latest/concepts/wagtail-interfaces/#admin-interface">admin interface</a> by logging into <a class="reference external" href="http://127.0.0.1:8000/admin">http://127.0.0.1:8000/admin</a> with the username and password that you entered while creating an admin user with <code class="docutils literal notranslate"><span class="pre">createsuperuser</span></code>.</p>
+<p></p>
+</section>
+</section>
+<section id="extend-the-homepage-model">
+<h2>Extend the HomePage model<a class="headerlink" href="tutorial.html#extend-the-homepage-model" title="Link to this heading">¶</a></h2>
+<p>Out of the box, the “home” app defines a blank <code class="docutils literal notranslate"><span class="pre">HomePage</span></code> model in <code class="docutils literal notranslate"><span class="pre">models.py</span></code>, along with a migration that creates a homepage and configures Wagtail to use it.</p>
+<p>Edit <code class="docutils literal notranslate"><span class="pre">home/models.py</span></code> as follows, to add a <code class="docutils literal notranslate"><span class="pre">body</span></code> field to the model:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Page</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">RichTextField</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">HomePage</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">RichTextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">content_panels</span> <span class="o">=</span> <span class="n">Page</span><span class="o">.</span><span class="n">content_panels</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">body</span></code> is a <code class="docutils literal notranslate"><span class="pre">RichTextField</span></code>, a special Wagtail field. When <code class="docutils literal notranslate"><span class="pre">blank=True</span></code>,
+it means the field isn’t mandatory and you can leave it empty. You can use any of the <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/" title="Django 5.2">Django core fields</a>. <code class="docutils literal notranslate"><span class="pre">content_panels</span></code> define the capabilities and the layout of the editing interface. Adding fields to <code class="docutils literal notranslate"><span class="pre">content_panels</span></code> enables you to edit them in the Wagtail <a class="reference external" href="https://guide.wagtail.org/en-latest/concepts/wagtail-interfaces/#admin-interface">admin interface</a>. You can read more about this on <a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/pages.html"><span class="doc std std-doc">Page models</span></a>.</p>
+<p>Run:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creates the migrations file.</span>
+python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
+
+<span class="c1"># Executes the migrations and updates the database with your model changes.</span>
+python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</pre></div>
+</div>
+<p>You must run the preceding commands each time you make changes to the model definition. Here is the expected output from the terminal:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Migrations for &#39;home&#39;:
+  home/migrations/0003_homepage_body.py
+    - Add field body to homepage
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, home, sessions, taggit, wagtailadmin, wagtailcore, wagtaildocs, wagtailembeds, wagtailforms, wagtailimages, wagtailredirects, wagtailsearch, wagtailusers
+Running migrations:
+  Applying home.0003_homepage_body... OK
+</pre></div>
+</div>
+<p>You can now edit the homepage within the Wagtail <a class="reference external" href="https://guide.wagtail.org/en-latest/concepts/wagtail-interfaces/#admin-interface">admin interface</a>. On your <a class="reference external" href="https://guide.wagtail.org/en-latest/how-to-guides/find-your-way-around/#the-sidebar">Sidebar</a>, go to <strong>Pages</strong> and click edit beside <strong>Home</strong> to see the new body field.</p>
+<p></p>
+<p>Enter the text “Welcome to our new site!” into the body field, and publish the page by selecting <strong>Publish</strong> at the bottom of the page editor, rather than <strong>Save Draft</strong>.</p>
+<p>You must update the page template to reflect the changes made
+to the model. Wagtail uses normal Django templates to render each page
+type. By default, it looks for a template filename formed from the app and model name,
+separating capital letters with underscores. For example, <code class="docutils literal notranslate"><span class="pre">HomePage</span></code> within the “home” app becomes
+<code class="docutils literal notranslate"><span class="pre">home/home_page.html</span></code>. This template file can exist in any location that
+<a class="reference external" href="https://docs.djangoproject.com/en/stable/intro/tutorial03/#write-views-that-actually-do-something" title="Django 5.2">Django’s template rules</a> recognize. Conventionally, you can place it within a <code class="docutils literal notranslate"><span class="pre">templates</span></code> folder within the app.</p>
+<p>Edit <code class="docutils literal notranslate"><span class="pre">home/templates/home/home_page.html</span></code> to contain the following:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;base.html&quot;</span> <span class="cp">%}</span>
+
+<span class="cm">&lt;!-- load wagtailcore_tags by adding this: --&gt;</span>
+<span class="cp">{%</span> <span class="k">load</span> <span class="nv">wagtailcore_tags</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">body_class</span> <span class="cp">%}</span>template-homepage<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+
+<span class="cm">&lt;!-- replace everything below with: --&gt;</span>
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span>
+    <span class="cp">{{</span> <span class="nv">page.body</span><span class="o">|</span><span class="nf">richtext</span> <span class="cp">}}</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">base.html</span></code> refers to a parent template. It must always be the first template tag that you use in a template. Extending from this template saves you from rewriting code and allows pages across your app to share a similar frame. By using block tags in the child template, you can override specific content within the parent template.</p>
+<p>Also, you must load <code class="docutils literal notranslate"><span class="pre">wagtailcore_tags</span></code> at the top of the template and provide additional tags to those provided by Django.</p>
+<p></p>
+<section id="wagtail-template-tags">
+<h3>Wagtail template tags<a class="headerlink" href="tutorial.html#wagtail-template-tags" title="Link to this heading">¶</a></h3>
+<p>In addition to Django’s <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/templates/builtins/" title="Django 5.2">template tags and filters</a>,
+Wagtail provides a number of its own <a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/writing_templates.html#template-tags-and-filters"><span class="std std-ref">template tags &amp; filters</span></a>,
+which you can load by including <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">load</span> <span class="pre">wagtailcore_tags</span> <span class="pre">%}</span></code> at the top of
+your template file.</p>
+<p>This tutorial uses the <em>richtext</em> filter to escape and print the contents
+of a <code class="docutils literal notranslate"><span class="pre">RichTextField</span></code>:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">load</span> <span class="nv">wagtailcore_tags</span> <span class="cp">%}</span>
+<span class="cp">{{</span> <span class="nv">page.body</span><span class="o">|</span><span class="nf">richtext</span> <span class="cp">}}</span>
+</pre></div>
+</div>
+<p>Produces:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Welcome to our new site!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> You must include <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">load</span> <span class="pre">wagtailcore_tags</span> <span class="pre">%}</span></code> in each
+template that uses Wagtail’s tags. If the tags aren’t loaded, Django throws a <code class="docutils literal notranslate"><span class="pre">TemplateSyntaxError</span></code>.</p>
+</section>
+</section>
+<section id="a-basic-blog">
+<h2>A basic blog<a class="headerlink" href="tutorial.html#a-basic-blog" title="Link to this heading">¶</a></h2>
+<p>You are now ready to create a blog, use the following command line to create a new app in your Wagtail project.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>startapp<span class="w"> </span>blog
+</pre></div>
+</div>
+<p>Add the new <code class="docutils literal notranslate"><span class="pre">blog</span></code> app to <code class="docutils literal notranslate"><span class="pre">INSTALLED_APPS</span></code> in <code class="docutils literal notranslate"><span class="pre">mysite/settings/base.py</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;blog&quot;</span><span class="p">,</span> <span class="c1"># &lt;- Our new blog app.</span>
+    <span class="s2">&quot;home&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;search&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;wagtail.contrib.forms&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;wagtail.contrib.redirects&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;wagtail.embeds&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;wagtail.sites&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;wagtail.users&quot;</span><span class="p">,</span>
+    <span class="c1">#... other packages</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must register all apps within the <code class="docutils literal notranslate"><span class="pre">INSTALLED_APPS</span></code> section of the <code class="docutils literal notranslate"><span class="pre">base.py</span></code> file in the <code class="docutils literal notranslate"><span class="pre">mysite/settings</span></code> directory. Look at this file to see how the <code class="docutils literal notranslate"><span class="pre">start</span></code> command lists your project’s apps.</p>
+</div>
+<section id="blog-index-and-posts">
+<h3>Blog index and posts<a class="headerlink" href="tutorial.html#blog-index-and-posts" title="Link to this heading">¶</a></h3>
+<p>Start with creating a simple index page for your blog. Edit <code class="docutils literal notranslate"><span class="pre">blog/models.py</span></code> to include:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+
+<span class="c1"># Add these:</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Page</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">RichTextField</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BlogIndexPage</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+    <span class="n">intro</span> <span class="o">=</span> <span class="n">RichTextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">content_panels</span> <span class="o">=</span> <span class="n">Page</span><span class="o">.</span><span class="n">content_panels</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;intro&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Since you added a new model to your app, you must create and run a database migration:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
+python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</pre></div>
+</div>
+<p>Also, since the model name is <code class="docutils literal notranslate"><span class="pre">BlogIndexPage</span></code>, the default template name,
+unless you override it, is <code class="docutils literal notranslate"><span class="pre">blog_index_page.html</span></code>. Django looks for a template whose name matches the name of your Page model within the templates directory in your blog app folder. You can override this default behavior if you want to. To create a template for the
+<code class="docutils literal notranslate"><span class="pre">BlogIndexPage</span></code> model, create a file at the location <code class="docutils literal notranslate"><span class="pre">blog/templates/blog/blog_index_page.html</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to create the folders <code class="docutils literal notranslate"><span class="pre">templates/blog</span></code> within your <code class="docutils literal notranslate"><span class="pre">blog</span></code> app folder.</p>
+</div>
+<p>In your <code class="docutils literal notranslate"><span class="pre">blog_index_page.html</span></code> file enter the following content:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;base.html&quot;</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">load</span> <span class="nv">wagtailcore_tags</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">body_class</span> <span class="cp">%}</span>template-blogindexpage<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;intro&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">page.intro</span><span class="o">|</span><span class="nf">richtext</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nv">post</span> <span class="k">in</span> <span class="nv">page.get_children</span> <span class="cp">%}</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{%</span> <span class="k">pageurl</span> <span class="nv">post</span> <span class="cp">%}</span><span class="s">&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">post.title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="cp">{{</span> <span class="nv">post.specific.intro</span> <span class="cp">}}</span>
+        <span class="cp">{{</span> <span class="nv">post.specific.body</span><span class="o">|</span><span class="nf">richtext</span> <span class="cp">}}</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>Other than using <code class="docutils literal notranslate"><span class="pre">get_children</span></code>, the preceding <code class="docutils literal notranslate"><span class="pre">blog_index_page.html</span></code> template is similar to your previous work with the <code class="docutils literal notranslate"><span class="pre">home_page.html</span></code> template. You will learn about the use of <code class="docutils literal notranslate"><span class="pre">get_children</span></code> later in the tutorial.</p>
+<p>If you have a Django background, then you will notice that the <code class="docutils literal notranslate"><span class="pre">pageurl</span></code> tag is similar to Django’s <code class="docutils literal notranslate"><span class="pre">url</span></code> tag, but takes a Wagtail Page object as an additional argument.</p>
+<p>Now that this is complete, here is how you can create a page from the Wagtail <a class="reference external" href="https://guide.wagtail.org/en-latest/concepts/wagtail-interfaces/#admin-interface">admin interface</a>:</p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="http://127.0.0.1:8000/admin">http://127.0.0.1:8000/admin</a> and sign in with your admin user details.</p></li>
+<li><p>In the Wagtail <a class="reference external" href="https://guide.wagtail.org/en-latest/concepts/wagtail-interfaces/#admin-interface">admin interface</a>, go to Pages, then click Home.</p></li>
+<li><p>Add a child page to the Home page by clicking the <strong><code class="docutils literal notranslate"><span class="pre">+</span></code></strong> icon (Add child page) at the top of the screen.</p></li>
+<li><p>Choose <strong>Blog index page</strong> from the list of the page types.</p></li>
+<li><p>Use “Blog” as your page title, make sure it has the slug “blog” on the Promote tab, and publish it.</p></li>
+</ol>
+<p>You can now access the URL, <a class="reference external" href="http://127.0.0.1:8000/blog">http://127.0.0.1:8000/blog</a> on your site. Note how the slug from the Promote tab defines the page URL.</p>
+<p>Now create a model and template for your blog posts. Edit <code class="docutils literal notranslate"><span class="pre">blog/models.py</span></code> to include:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Page</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">RichTextField</span>
+
+<span class="c1"># keep the definition of BlogIndexPage model, and add the BlogPage model:</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BlogPage</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="s2">&quot;Post date&quot;</span><span class="p">)</span>
+    <span class="n">intro</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">RichTextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">content_panels</span> <span class="o">=</span> <span class="n">Page</span><span class="o">.</span><span class="n">content_panels</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;intro&quot;</span><span class="p">,</span> <span class="s2">&quot;body&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You have to migrate your database again because of the new changes in your <code class="docutils literal notranslate"><span class="pre">models.py</span></code> file:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
+python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</pre></div>
+</div>
+<p>Create a new template file at the location <code class="docutils literal notranslate"><span class="pre">blog/templates/blog/blog_page.html</span></code>. Now add the following content to your <code class="docutils literal notranslate"><span class="pre">blog_page.html</span></code> file:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;base.html&quot;</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">load</span> <span class="nv">wagtailcore_tags</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">body_class</span> <span class="cp">%}</span>template-blogpage<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;meta&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">page.date</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;intro&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">page.intro</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="cp">{{</span> <span class="nv">page.body</span><span class="o">|</span><span class="nf">richtext</span> <span class="cp">}}</span>
+
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">page.get_parent.url</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>Return to blog<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>Note the use of Wagtail’s built-in <code class="docutils literal notranslate"><span class="pre">get_parent()</span></code> method to obtain the
+URL of the blog this post is a part of.</p>
+<p>Now, go to your <a class="reference external" href="https://guide.wagtail.org/en-latest/concepts/wagtail-interfaces/#admin-interface">admin interface</a> and create a few blog posts as children of <code class="docutils literal notranslate"><span class="pre">BlogIndexPage</span></code> by following these steps:</p>
+<ol class="arabic simple">
+<li><p>Click <strong>Pages</strong> from the Wagtail <a class="reference external" href="https://guide.wagtail.org/en-latest/how-to-guides/find-your-way-around/#the-sidebar">Sidebar</a>, and then click <strong>Home</strong></p></li>
+<li><p>Hover on <strong>Blog</strong> and click <strong>Add child page</strong>.</p></li>
+</ol>
+<p></p>
+<p>Select the page type, <strong>Blog page</strong>:</p>
+<p></p>
+<p>Populate the fields with the content of your choice:</p>
+<p></p>
+<p>To add a link from your rich text <strong>Body</strong> field, highlight the text you want to attach the link to. You can now see a pop-up modal which has several actions represented by their icons. Click on the appropriate icon to add a link. You can also click the <strong>+</strong> icon, which appears at the left-hand side of the field to get similar actions as those shown in the pop-up modal.</p>
+<p>To add an image, press enter to move to the next line in the field. Then click the <strong>+</strong> icon and select <strong>Image</strong> from the list of actions to add an image.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Wagtail gives you full control over the kind of content you can create under
+various parent content types. By default, any page type can be a child of any
+other page type.</p>
+</div>
+<p>Publish each blog post when you are done editing.</p>
+<p>Congratulations! You now have the beginnings of a working blog. If you go to
+<a class="reference external" href="http://127.0.0.1:8000/blog">http://127.0.0.1:8000/blog</a> in your browser, you can see all the posts that you created by following the preceding steps:</p>
+<p></p>
+<p>Titles should link to post pages, and a link back to the blog’s homepage should appear in the footer of each post page.</p>
+</section>
+<section id="parents-and-children">
+<h3>Parents and children<a class="headerlink" href="tutorial.html#parents-and-children" title="Link to this heading">¶</a></h3>
+<p>Much of the work in Wagtail revolves around the concept of <em>hierarchical tree structures</em> consisting of nodes and leaves. You can read more on this <a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/pages/theory.html"><span class="doc std std-doc">Theory</span></a>. In this case, the <code class="docutils literal notranslate"><span class="pre">BlogIndexPage</span></code> serves as a <em>node</em>, and individual <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code> instances represent the <em>leaves</em>.</p>
+<p>Take another look at the guts of <code class="docutils literal notranslate"><span class="pre">blog_index_page.html</span></code>:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">post</span> <span class="k">in</span> <span class="nv">page.get_children</span> <span class="cp">%}</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{%</span> <span class="k">pageurl</span> <span class="nv">post</span> <span class="cp">%}</span><span class="s">&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">post.title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="cp">{{</span> <span class="nv">post.specific.intro</span> <span class="cp">}}</span>
+    <span class="cp">{{</span> <span class="nv">post.specific.body</span><span class="o">|</span><span class="nf">richtext</span> <span class="cp">}}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>Every “page” in Wagtail can call out to its parent or children
+from its position in the hierarchy. But why do you have to
+specify <code class="docutils literal notranslate"><span class="pre">post.specific.intro</span></code> rather than <code class="docutils literal notranslate"><span class="pre">post.intro</span></code>?
+This has to do with the way you define your model, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">BlogPage(Page)</span></code>. The <code class="docutils literal notranslate"><span class="pre">get_children()</span></code> method gets you a list of instances of the <code class="docutils literal notranslate"><span class="pre">Page</span></code> base class.
+When you want to reference properties of the instances that inherit from the base class,
+Wagtail provides the <code class="docutils literal notranslate"><span class="pre">specific</span></code> method that retrieves the actual <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code> record.
+While the “title” field is present on the base <code class="docutils literal notranslate"><span class="pre">Page</span></code> model, “intro” is only present
+on the <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code> model. So you need <code class="docutils literal notranslate"><span class="pre">.specific</span></code> to access it.</p>
+<p>You can simplify the template code by using the Django <code class="docutils literal notranslate"><span class="pre">with</span></code> tag. Now, modify your <code class="docutils literal notranslate"><span class="pre">blog_index_page.html</span></code>:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">post</span> <span class="k">in</span> <span class="nv">page.get_children</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">with</span> <span class="nv">post</span><span class="o">=</span><span class="nv">post.specific</span> <span class="cp">%}</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{%</span> <span class="k">pageurl</span> <span class="nv">post</span> <span class="cp">%}</span><span class="s">&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">post.title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">post.intro</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="cp">{{</span> <span class="nv">post.body</span><span class="o">|</span><span class="nf">richtext</span> <span class="cp">}}</span>
+    <span class="cp">{%</span> <span class="k">endwith</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>When you start writing more customized Wagtail code, you’ll find a whole set of QuerySet
+modifiers to help you navigate the hierarchy.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Given a page object &#39;somepage&#39;:</span>
+<span class="n">MyModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">descendant_of</span><span class="p">(</span><span class="n">somepage</span><span class="p">)</span>
+<span class="n">child_of</span><span class="p">(</span><span class="n">page</span><span class="p">)</span> <span class="o">/</span> <span class="n">not_child_of</span><span class="p">(</span><span class="n">somepage</span><span class="p">)</span>
+<span class="n">ancestor_of</span><span class="p">(</span><span class="n">somepage</span><span class="p">)</span> <span class="o">/</span> <span class="n">not_ancestor_of</span><span class="p">(</span><span class="n">somepage</span><span class="p">)</span>
+<span class="n">parent_of</span><span class="p">(</span><span class="n">somepage</span><span class="p">)</span> <span class="o">/</span> <span class="n">not_parent_of</span><span class="p">(</span><span class="n">somepage</span><span class="p">)</span>
+<span class="n">sibling_of</span><span class="p">(</span><span class="n">somepage</span><span class="p">)</span> <span class="o">/</span> <span class="n">not_sibling_of</span><span class="p">(</span><span class="n">somepage</span><span class="p">)</span>
+<span class="c1"># ... and ...</span>
+<span class="n">somepage</span><span class="o">.</span><span class="n">get_children</span><span class="p">()</span>
+<span class="n">somepage</span><span class="o">.</span><span class="n">get_ancestors</span><span class="p">()</span>
+<span class="n">somepage</span><span class="o">.</span><span class="n">get_descendants</span><span class="p">()</span>
+<span class="n">somepage</span><span class="o">.</span><span class="n">get_siblings</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>For more information, see <a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/pages/queryset_reference.html"><span class="doc std std-doc">Page QuerySet reference</span></a></p>
+</section>
+<section id="overriding-context">
+<h3>Overriding Context<a class="headerlink" href="tutorial.html#overriding-context" title="Link to this heading">¶</a></h3>
+<p>With a keen eye, you may have noticed problems with the blog index page:</p>
+<ol class="arabic simple">
+<li><p>Posts are in chronological order. Generally blogs display content in <em>reverse</em> chronological order.</p></li>
+<li><p>Posts drafts are visible. You want to make sure that it displays only <em>published</em> content.</p></li>
+</ol>
+<p>To accomplish these, you need to do more than grab the index
+page’s children in the template. Instead, you want to modify the
+QuerySet in the model definition. Wagtail makes this possible via
+the overridable <code class="docutils literal notranslate"><span class="pre">get_context()</span></code> method.</p>
+<p>Modify your <code class="docutils literal notranslate"><span class="pre">BlogIndexPage</span></code> model:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BlogIndexPage</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+    <span class="n">intro</span> <span class="o">=</span> <span class="n">RichTextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># add the get_context method:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="c1"># Update context to include only published posts, ordered by reverse-chron</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_context</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="n">blogpages</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_children</span><span class="p">()</span><span class="o">.</span><span class="n">live</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-first_published_at&#39;</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;blogpages&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">blogpages</span>
+        <span class="k">return</span> <span class="n">context</span>
+
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Here is a quick breakdown of the changes that you made:</p>
+<ol class="arabic simple">
+<li><p>You retrieved the original context.</p></li>
+<li><p>You created a custom QuerySet modifier.</p></li>
+<li><p>You added the custom QuerySet modifier to the retrieved context.</p></li>
+<li><p>You returned the modified context to the view.</p></li>
+</ol>
+<p>You also need to modify your <code class="docutils literal notranslate"><span class="pre">blog_index_page.html</span></code> template slightly. Change:</p>
+<p><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">post</span> <span class="pre">in</span> <span class="pre">page.get_children</span> <span class="pre">%}</span></code> to <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">post</span> <span class="pre">in</span> <span class="pre">blogpages</span> <span class="pre">%}</span></code></p>
+<p>Now, unpublish one of your posts. The unpublished post should disappear from your blog’s index page. Also, the remaining posts should now be sorted with the most recently published posts coming first.</p>
+</section>
+<section id="images">
+<h3>Images<a class="headerlink" href="tutorial.html#images" title="Link to this heading">¶</a></h3>
+<p>The next feature that you need to add is the ability to attach an image gallery to your blog posts. While it’s possible to simply insert images into the rich text <code class="docutils literal notranslate"><span class="pre">body</span></code> field, there are several advantages to setting up your gallery images as a new dedicated object type within the database. This way, you have full control over the layout and styling of the images on the template, rather than having to lay them out in a particular way within the field. It also makes it possible for you to use the images elsewhere, independently of the blog text. For example, displaying a thumbnail on the blog’s index page.</p>
+<p>Now modify your <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code> model and add a new <code class="docutils literal notranslate"><span class="pre">BlogPageGalleryImage</span></code> model to <code class="docutils literal notranslate"><span class="pre">blog/models.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># New imports added for ParentalKey, Orderable</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">modelcluster.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">ParentalKey</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Page</span><span class="p">,</span> <span class="n">Orderable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">RichTextField</span>
+
+<span class="c1"># ... Keep the definition of BlogIndexPage, update the content_panels of BlogPage, and add a new BlogPageGalleryImage model:</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BlogPage</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="s2">&quot;Post date&quot;</span><span class="p">)</span>
+    <span class="n">intro</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">RichTextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">content_panels</span> <span class="o">=</span> <span class="n">Page</span><span class="o">.</span><span class="n">content_panels</span> <span class="o">+</span> <span class="p">[</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;intro&quot;</span><span class="p">,</span> <span class="s2">&quot;body&quot;</span><span class="p">,</span>
+
+        <span class="c1"># Add this</span>
+         <span class="s2">&quot;gallery_images&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BlogPageGalleryImage</span><span class="p">(</span><span class="n">Orderable</span><span class="p">):</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">ParentalKey</span><span class="p">(</span><span class="n">BlogPage</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;gallery_images&#39;</span><span class="p">)</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span>
+        <span class="s1">&#39;wagtailimages.Image&#39;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;+&#39;</span>
+    <span class="p">)</span>
+    <span class="n">caption</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+
+    <span class="n">panels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">,</span> <span class="s2">&quot;caption&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">makemigrations</span></code> and <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">migrate</span></code>.</p>
+<p>There are a few new concepts here:</p>
+<ol class="arabic simple">
+<li><p>Inheriting from <code class="docutils literal notranslate"><span class="pre">Orderable</span></code> adds a <code class="docutils literal notranslate"><span class="pre">sort_order</span></code> field to the model to keep track of the ordering of images in the gallery.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">ParentalKey</span></code> to <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code> is what attaches the gallery images to a specific page. A <code class="docutils literal notranslate"><span class="pre">ParentalKey</span></code> works similarly to a <code class="docutils literal notranslate"><span class="pre">ForeignKey</span></code>, but also defines <code class="docutils literal notranslate"><span class="pre">BlogPageGalleryImage</span></code> as a “child” of the <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code> model, so that it’s treated as a fundamental part of the page in operations like submitting for moderation, and tracking revision history.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForeignKey</span></code> to Wagtail’s built-in <code class="docutils literal notranslate"><span class="pre">Image</span></code> model, which stores the actual images. This appears in the page editor as a pop-up interface for choosing an existing image or uploading a new one. This way, you allow an image to exist in multiple galleries. This creates a many-to-many relationship between pages and images.</p></li>
+<li><p>Specifying <code class="docutils literal notranslate"><span class="pre">on_delete=models.CASCADE</span></code> on the foreign key means that deleting the image from the system also deletes the gallery entry. In other situations, it might be appropriate to leave the gallery entry in place. For example, if an “our staff” page includes a list of people with headshots, and you delete one of those photos, but prefer to leave the person in place on the page without a photo. In this case, you must set the foreign key to <code class="docutils literal notranslate"><span class="pre">blank=True,</span> <span class="pre">null=True,</span> <span class="pre">on_delete=models.SET_NULL</span></code>.</p></li>
+<li><p>Finally, adding the <code class="docutils literal notranslate"><span class="pre">InlinePanel</span></code> to <code class="docutils literal notranslate"><span class="pre">BlogPage.content_panels</span></code> makes the gallery images available on the editing interface for <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code>.</p></li>
+</ol>
+<p>After editing your <code class="docutils literal notranslate"><span class="pre">blog/models.py</span></code>, you should see <strong>Images</strong> in your <a class="reference external" href="https://guide.wagtail.org/en-latest/how-to-guides/find-your-way-around/#the-sidebar">Sidebar</a> and a <strong>Gallery images</strong> field with the option to upload images and provide a caption for it in the <a class="reference external" href="https://guide.wagtail.org/en-latest/concepts/wagtail-interfaces/#edit-screen">Edit Screen</a> of your blog posts.</p>
+<p>Edit your blog page template <code class="docutils literal notranslate"><span class="pre">blog_page.html</span></code> to include the images section:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- Load the wagtailimages_tags: --&gt;</span>
+<span class="cp">{%</span> <span class="k">load</span> <span class="nv">wagtailcore_tags</span> <span class="nv">wagtailimages_tags</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">body_class</span> <span class="cp">%}</span>template-blogpage<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;meta&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">page.date</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;intro&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">page.intro</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="cp">{{</span> <span class="nv">page.body</span><span class="o">|</span><span class="nf">richtext</span> <span class="cp">}}</span>
+
+    <span class="cm">&lt;!-- Add this: --&gt;</span>
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">page.gallery_images.all</span> <span class="cp">%}</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;float: inline-start; margin: 10px&quot;</span><span class="p">&gt;</span>
+            <span class="cp">{%</span> <span class="k">image</span> <span class="nv">item.image</span> <span class="nv">fill-320x240</span> <span class="cp">%}</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">item.caption</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">page.get_parent.url</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>Return to blog<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>Make sure to upload some images when editing the blog page on your Wagtail admin if you want to display them after editing your blog page template.</p>
+<p>Here, you use the <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">image</span> <span class="pre">%}</span></code> tag, which exists in the <code class="docutils literal notranslate"><span class="pre">wagtailimages_tags</span></code> library, imported at the top of the template to insert an <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> element, with a <code class="docutils literal notranslate"><span class="pre">fill-320x240</span></code> parameter to resize and crop the image to fill a 320x240 rectangle. You can read more about using images in templates in the <a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/images.html"><span class="doc std std-doc">docs</span></a>.</p>
+<p></p>
+<p>Since your gallery images are database objects in their own right, you can now query and re-use them independently of the blog post body. Now, define a <code class="docutils literal notranslate"><span class="pre">main_image</span></code> method in your <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code> model, which returns the image from the first gallery item or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no gallery items exist:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BlogPage</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="s2">&quot;Post date&quot;</span><span class="p">)</span>
+    <span class="n">intro</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">RichTextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Add the main_image method:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">main_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">gallery_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gallery_images</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">gallery_item</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">gallery_item</span><span class="o">.</span><span class="n">image</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">content_panels</span> <span class="o">=</span> <span class="n">Page</span><span class="o">.</span><span class="n">content_panels</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;intro&quot;</span><span class="p">,</span> <span class="s2">&quot;body&quot;</span><span class="p">,</span> <span class="s2">&quot;gallery_images&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This method is now available from your templates. Update <code class="docutils literal notranslate"><span class="pre">blog_index_page.html</span></code> to load the <code class="docutils literal notranslate"><span class="pre">wagtailimages_tags</span></code> library and include the main image as a thumbnail alongside each post:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- Load wagtailimages_tags: --&gt;</span>
+<span class="cp">{%</span> <span class="k">load</span> <span class="nv">wagtailcore_tags</span> <span class="nv">wagtailimages_tags</span> <span class="cp">%}</span>
+
+<span class="cm">&lt;!-- Modify this: --&gt;</span>
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">post</span> <span class="k">in</span> <span class="nv">blogpages</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">with</span> <span class="nv">post</span><span class="o">=</span><span class="nv">post.specific</span> <span class="cp">%}</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{%</span> <span class="k">pageurl</span> <span class="nv">post</span> <span class="cp">%}</span><span class="s">&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">post.title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+
+        <span class="cm">&lt;!-- Add this: --&gt;</span>
+        <span class="cp">{%</span> <span class="k">with</span> <span class="nv">post.main_image</span> <span class="k">as</span> <span class="nv">main_image</span> <span class="cp">%}</span>
+            <span class="cp">{%</span> <span class="k">if</span> <span class="nv">main_image</span> <span class="cp">%}{%</span> <span class="k">image</span> <span class="nv">main_image</span> <span class="nv">fill-160x100</span> <span class="cp">%}{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+        <span class="cp">{%</span> <span class="k">endwith</span> <span class="cp">%}</span>
+
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">post.intro</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="cp">{{</span> <span class="nv">post.body</span><span class="o">|</span><span class="nf">richtext</span> <span class="cp">}}</span>
+    <span class="cp">{%</span> <span class="k">endwith</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+</section>
+<section id="authors">
+<span id="tutorial-categories"></span><h3>Authors<a class="headerlink" href="tutorial.html#authors" title="Link to this heading">¶</a></h3>
+<p>You probably want your blog posts to have authors, which is an essential feature of blogs. The way to go about this is to have a fixed list, managed by the site owner through a separate area of the <a class="reference external" href="https://guide.wagtail.org/en-latest/concepts/wagtail-interfaces/#admin-interface">admin interface</a>.</p>
+<p>First, define an <code class="docutils literal notranslate"><span class="pre">Author</span></code> model. This model isn’t a page in its own right. You have to define it as a standard Django <code class="docutils literal notranslate"><span class="pre">models.Model</span></code> rather than inheriting from <code class="docutils literal notranslate"><span class="pre">Page</span></code>. Wagtail introduces the concept of <strong>Snippets</strong> for reusable pieces of content which don’t exist as part of the page tree themselves. You can manage snippets through the <a class="reference external" href="https://guide.wagtail.org/en-latest/concepts/wagtail-interfaces/#admin-interface">admin interface</a>. You can register a model as a snippet by adding the <code class="docutils literal notranslate"><span class="pre">&#64;register_snippet</span></code> decorator. Also, you can use all the fields types that you’ve used so far on pages on snippets too.</p>
+<p>To create Authors and give each author an author image as well as a name, add the following to <code class="docutils literal notranslate"><span class="pre">blog/models.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add this to the top of the file</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.snippets.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">register_snippet</span>
+
+<span class="c1"># ... Keep BlogIndexPage, BlogPage, BlogPageGalleryImage models, and then add the Author model:</span>
+<span class="nd">@register_snippet</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Author</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">author_image</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span>
+        <span class="s1">&#39;wagtailimages.Image&#39;</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">SET_NULL</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;+&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">panels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;author_image&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Authors&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that you are using <code class="docutils literal notranslate"><span class="pre">panels</span></code> rather than <code class="docutils literal notranslate"><span class="pre">content_panels</span></code> here. Since snippets generally have no need for fields such as slug or publish date, the editing interface for them is not split into separate ‘content’ / ‘promote’ / ‘settings’ tabs. So there is no need to distinguish between ‘content panels’ and ‘promote panels’.</p>
+</div>
+<p>Migrate this change by running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">makemigrations</span></code> and <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">migrate</span></code>. Create a few authors through the <strong>Snippets</strong> area which now appears in your Wagtail <a class="reference external" href="https://guide.wagtail.org/en-latest/concepts/wagtail-interfaces/#admin-interface">admin interface</a>.</p>
+<p>You can now add authors to the <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code> model, as a many-to-many field. The field type to use for this is <code class="docutils literal notranslate"><span class="pre">ParentalManyToManyField</span></code>. This field is a variation of the standard Django <code class="docutils literal notranslate"><span class="pre">ManyToManyField</span></code> that ensures the selected objects are properly associated with the page record in the revision history. It operates in a similar manner to how <code class="docutils literal notranslate"><span class="pre">ParentalKey</span></code> replaces <code class="docutils literal notranslate"><span class="pre">ForeignKey</span></code> for one-to-many relations. To add authors to the <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code>, modify <code class="docutils literal notranslate"><span class="pre">models.py</span></code> in your blog app folder:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># New imports added for ParentalManyToManyField, and MultiFieldPanel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">modelcluster.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">ParentalKey</span><span class="p">,</span> <span class="n">ParentalManyToManyField</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Page</span><span class="p">,</span> <span class="n">Orderable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">RichTextField</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.admin.panels</span><span class="w"> </span><span class="kn">import</span> <span class="n">MultiFieldPanel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.snippets.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">register_snippet</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BlogPage</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="s2">&quot;Post date&quot;</span><span class="p">)</span>
+    <span class="n">intro</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">RichTextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Add this:</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="n">ParentalManyToManyField</span><span class="p">(</span><span class="s1">&#39;blog.Author&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># ... Keep the main_image method. Modify your content_panels:</span>
+    <span class="n">content_panels</span> <span class="o">=</span> <span class="n">Page</span><span class="o">.</span><span class="n">content_panels</span> <span class="o">+</span> <span class="p">[</span>
+        <span class="n">MultiFieldPanel</span><span class="p">([</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;authors&quot;</span><span class="p">],</span> <span class="n">heading</span><span class="o">=</span><span class="s2">&quot;Blog information&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;intro&quot;</span><span class="p">,</span> <span class="s2">&quot;body&quot;</span><span class="p">,</span> <span class="s2">&quot;gallery_images&quot;</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+<p>Here you have used the  <code class="docutils literal notranslate"><span class="pre">MultiFieldPanel</span></code> in <code class="docutils literal notranslate"><span class="pre">content_panels</span></code> to group the <code class="docutils literal notranslate"><span class="pre">date</span></code> and <code class="docutils literal notranslate"><span class="pre">authors</span></code> fields together for readability. By doing this, you are creating a single panel object that encapsulates multiple fields within a list or tuple into a single <code class="docutils literal notranslate"><span class="pre">heading</span></code> string. This feature is particularly useful for organizing related fields in the admin interface, making the UI more intuitive for content editors.</p>
+<p>Migrate your database by running <code class="docutils literal notranslate"><span class="pre">python manage.py makemigrations</span></code> and <code class="docutils literal notranslate"><span class="pre">python manage.py migrate</span></code>, and then go to your <a class="reference external" href="https://guide.wagtail.org/en-latest/concepts/wagtail-interfaces/#admin-interface">admin interface</a> . Notice that the list of authors is presented as a multiple select box. This is the default representation for a multiple choice field - however, users often find a set of checkboxes to be more familiar and easier to work with.</p>
+<p></p>
+<p>You can do this by replacing the definition of <code class="docutils literal notranslate"><span class="pre">&quot;authors&quot;</span></code> in content_panels with a <code class="docutils literal notranslate"><span class="pre">FieldPanel</span></code> object. <code class="docutils literal notranslate"><span class="pre">FieldPanel(&quot;authors&quot;)</span></code> is equivalent to writing <code class="docutils literal notranslate"><span class="pre">&quot;authors&quot;</span></code>, but allows passing additional optional arguments such as <code class="docutils literal notranslate"><span class="pre">widget</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># New imports added for forms, and FieldPanel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django</span><span class="w"> </span><span class="kn">import</span> <span class="n">forms</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">modelcluster.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">ParentalKey</span><span class="p">,</span> <span class="n">ParentalManyToManyField</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Page</span><span class="p">,</span> <span class="n">Orderable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">RichTextField</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.admin.panels</span><span class="w"> </span><span class="kn">import</span> <span class="n">FieldPanel</span><span class="p">,</span> <span class="n">MultiFieldPanel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.snippets.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">register_snippet</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BlogPage</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="s2">&quot;Post date&quot;</span><span class="p">)</span>
+    <span class="n">intro</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">RichTextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">authors</span> <span class="o">=</span> <span class="n">ParentalManyToManyField</span><span class="p">(</span><span class="s1">&#39;blog.Author&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">content_panels</span> <span class="o">=</span> <span class="n">Page</span><span class="o">.</span><span class="n">content_panels</span> <span class="o">+</span> <span class="p">[</span>
+        <span class="n">MultiFieldPanel</span><span class="p">([</span>
+            <span class="s2">&quot;date&quot;</span><span class="p">,</span>
+            <span class="c1"># Change this:</span>
+            <span class="n">FieldPanel</span><span class="p">(</span><span class="s2">&quot;authors&quot;</span><span class="p">,</span> <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">CheckboxSelectMultiple</span><span class="p">),</span>
+        <span class="p">],</span> <span class="n">heading</span><span class="o">=</span><span class="s2">&quot;Blog information&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;intro&quot;</span><span class="p">,</span> <span class="s2">&quot;body&quot;</span><span class="p">,</span> <span class="s2">&quot;gallery_images&quot;</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+<p>In the preceding model modification, you used the <code class="docutils literal notranslate"><span class="pre">widget</span></code> keyword argument on the <code class="docutils literal notranslate"><span class="pre">FieldPanel</span></code> definition to specify a more user-friendly checkbox-based widget instead of the default list. Now go to your admin interface and you should see the author list displayed as a checklist.</p>
+<p></p>
+<p>Update the <code class="docutils literal notranslate"><span class="pre">blog_page.html</span></code> template to display the authors:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;meta&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">page.date</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+    <span class="cm">&lt;!-- Add this: --&gt;</span>
+    <span class="cp">{%</span> <span class="k">with</span> <span class="nv">authors</span><span class="o">=</span><span class="nv">page.authors.all</span> <span class="cp">%}</span>
+        <span class="cp">{%</span> <span class="k">if</span> <span class="nv">authors</span> <span class="cp">%}</span>
+            <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Posted by:<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+                <span class="cp">{%</span> <span class="k">for</span> <span class="nv">author</span> <span class="k">in</span> <span class="nv">authors</span> <span class="cp">%}</span>
+                    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display: inline&quot;</span><span class="p">&gt;</span>
+                        <span class="cp">{%</span> <span class="k">image</span> <span class="nv">author.author_image</span> <span class="nv">fill-40x60</span> <span class="nv">style</span><span class="o">=</span><span class="s2">&quot;vertical-align: middle&quot;</span> <span class="cp">%}</span>
+                        <span class="cp">{{</span> <span class="nv">author.name</span> <span class="cp">}}</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">endwith</span> <span class="cp">%}</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;intro&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">page.intro</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="cp">{{</span> <span class="nv">page.body</span><span class="o">|</span><span class="nf">richtext</span> <span class="cp">}}</span>
+
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">page.gallery_images.all</span> <span class="cp">%}</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;float: inline-start; margin: 10px&quot;</span><span class="p">&gt;</span>
+            <span class="cp">{%</span> <span class="k">image</span> <span class="nv">item.image</span> <span class="nv">fill-320x240</span> <span class="cp">%}</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">item.caption</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">page.get_parent.url</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>Return to blog<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>Add some authors to your blog posts, and publish them. Clicking on your blog posts from your blog index page should now give you a page similar to this image:</p>
+<p></p>
+</section>
+<section id="tag-posts">
+<h3>Tag posts<a class="headerlink" href="tutorial.html#tag-posts" title="Link to this heading">¶</a></h3>
+<p>Let’s say you want to let editors “tag” their posts, so that readers can, for example,
+view all bicycle-related content together. For this, you have to invoke
+the tagging system bundled with Wagtail, attach it to the <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code>
+model and content panels, and render linked tags on the blog post template.
+Of course, you’ll also need a working tag-specific URL view as well.</p>
+<p>First, alter <code class="docutils literal notranslate"><span class="pre">models.py</span></code> once more:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django</span><span class="w"> </span><span class="kn">import</span> <span class="n">forms</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+
+<span class="c1"># New imports added for ClusterTaggableManager, TaggedItemBase</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">modelcluster.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">ParentalKey</span><span class="p">,</span> <span class="n">ParentalManyToManyField</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">modelcluster.contrib.taggit</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClusterTaggableManager</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">taggit.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">TaggedItemBase</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Page</span><span class="p">,</span> <span class="n">Orderable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">RichTextField</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wagtail.admin.panels</span><span class="w"> </span><span class="kn">import</span> <span class="n">FieldPanel</span><span class="p">,</span> <span class="n">InlinePanel</span><span class="p">,</span> <span class="n">MultiFieldPanel</span>
+
+
+<span class="c1"># ... Keep the definition of BlogIndexPage model and add a new BlogPageTag model</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BlogPageTag</span><span class="p">(</span><span class="n">TaggedItemBase</span><span class="p">):</span>
+    <span class="n">content_object</span> <span class="o">=</span> <span class="n">ParentalKey</span><span class="p">(</span>
+        <span class="s1">&#39;BlogPage&#39;</span><span class="p">,</span>
+        <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;tagged_items&#39;</span><span class="p">,</span>
+        <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span>
+    <span class="p">)</span>
+
+<span class="c1"># Modify the BlogPage model:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BlogPage</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="s2">&quot;Post date&quot;</span><span class="p">)</span>
+    <span class="n">intro</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">RichTextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="n">ParentalManyToManyField</span><span class="p">(</span><span class="s1">&#39;blog.Author&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Add this:</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="n">ClusterTaggableManager</span><span class="p">(</span><span class="n">through</span><span class="o">=</span><span class="n">BlogPageTag</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># ... Keep the main_image method. Then modify the content_panels:</span>
+    <span class="n">content_panels</span> <span class="o">=</span> <span class="n">Page</span><span class="o">.</span><span class="n">content_panels</span> <span class="o">+</span> <span class="p">[</span>
+        <span class="n">MultiFieldPanel</span><span class="p">([</span>
+            <span class="s2">&quot;date&quot;</span><span class="p">,</span>
+            <span class="n">FieldPanel</span><span class="p">(</span><span class="s2">&quot;authors&quot;</span><span class="p">,</span> <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">CheckboxSelectMultiple</span><span class="p">),</span>
+
+            <span class="c1"># Add this:</span>
+            <span class="s2">&quot;tags&quot;</span><span class="p">,</span>
+        <span class="p">],</span> <span class="n">heading</span><span class="o">=</span><span class="s2">&quot;Blog information&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;intro&quot;</span><span class="p">,</span> <span class="s2">&quot;body&quot;</span><span class="p">,</span> <span class="s2">&quot;gallery_images&quot;</span>
+        <span class="p">]</span>
+</pre></div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">makemigrations</span></code> and <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">migrate</span></code>.</p>
+<p>The changes you made can be summarized as follows:</p>
+<ul class="simple">
+<li><p>New <code class="docutils literal notranslate"><span class="pre">modelcluster</span></code> and <code class="docutils literal notranslate"><span class="pre">taggit</span></code> imports</p></li>
+<li><p>Addition of a new <code class="docutils literal notranslate"><span class="pre">BlogPageTag</span></code> model, and a <code class="docutils literal notranslate"><span class="pre">tags</span></code> field on <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code>.</p></li>
+</ul>
+<p>Edit one of your <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code> instances, and you should now be able to tag posts:</p>
+<p></p>
+<p>To render tags on a <code class="docutils literal notranslate"><span class="pre">BlogPage</span></code>, add this to <code class="docutils literal notranslate"><span class="pre">blog_page.html</span></code>:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">page.get_parent.url</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>Return to blog<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Add this: --&gt;</span>
+<span class="cp">{%</span> <span class="k">with</span> <span class="nv">tags</span><span class="o">=</span><span class="nv">page.tags.all</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">if</span> <span class="nv">tags</span> <span class="cp">%}</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;tags&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Tags<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+            <span class="cp">{%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="k">in</span> <span class="nv">tags</span> <span class="cp">%}</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{%</span> <span class="k">slugurl</span> <span class="s1">&#39;tags&#39;</span> <span class="cp">%}</span><span class="s">?tag=</span><span class="cp">{{</span> <span class="nv">tag</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">tag</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endwith</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>Notice that you’re linking to pages here with the builtin <code class="docutils literal notranslate"><span class="pre">slugurl</span></code>
+tag rather than <code class="docutils literal notranslate"><span class="pre">pageurl</span></code>, which you used earlier. The difference is that <code class="docutils literal notranslate"><span class="pre">slugurl</span></code> takes a <code class="docutils literal notranslate"><span class="pre">Page</span></code> slug (from the Promote tab) as an argument. <code class="docutils literal notranslate"><span class="pre">pageurl</span></code> is more commonly used because it’s unambiguous and avoids extra database lookups. But in the case of this loop, the <code class="docutils literal notranslate"><span class="pre">Page</span></code> object isn’t readily available, so you fall back on the less-preferred <code class="docutils literal notranslate"><span class="pre">slugurl</span></code> tag.</p>
+<p>With the modifications that you’ve made so far, visiting a blog post with tags displays a series of linked buttons at the bottom, one for each tag associated with the post. However, clicking on a button will result in a <strong>404</strong> error page, as you are yet to define a “tags” view.</p>
+<p>Return to <code class="docutils literal notranslate"><span class="pre">blog/models.py</span></code> and add a new <code class="docutils literal notranslate"><span class="pre">BlogTagIndexPage</span></code> model:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BlogTagIndexPage</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+
+        <span class="c1"># Filter by tag</span>
+        <span class="n">tag</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;tag&#39;</span><span class="p">)</span>
+        <span class="n">blogpages</span> <span class="o">=</span> <span class="n">BlogPage</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">tags__name</span><span class="o">=</span><span class="n">tag</span><span class="p">)</span>
+
+        <span class="c1"># Update template context</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_context</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;blogpages&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">blogpages</span>
+        <span class="k">return</span> <span class="n">context</span>
+</pre></div>
+</div>
+<p>Note that this Page-based model defines no fields of its own.
+Even without fields, subclassing <code class="docutils literal notranslate"><span class="pre">Page</span></code> makes it a part of the
+Wagtail ecosystem, so that you can give it a title and URL in the
+admin. You can also override its <code class="docutils literal notranslate"><span class="pre">get_context()</span></code> method to add a
+QuerySet to the context dictionary, making it available to the template.</p>
+<p>Migrate this by running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">makemigrations</span></code> and then <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">migrate</span></code>. After migrating the new changes, create a new <code class="docutils literal notranslate"><span class="pre">BlogTagIndexPage</span></code> in the admin interface. To create the <code class="docutils literal notranslate"><span class="pre">BlogTagIndexPage</span></code>, follow the same process you followed in creating the <code class="docutils literal notranslate"><span class="pre">BlogIndexPage</span></code> and give it the slug “tags” on the Promote tab. This means the <code class="docutils literal notranslate"><span class="pre">BlogTagIndexPage</span></code> is a child of the home page and parallel to <code class="docutils literal notranslate"><span class="pre">Blog</span></code> in the admin interface.</p>
+<p>Access <code class="docutils literal notranslate"><span class="pre">/tags</span></code> and Django will tell you what you probably already knew.
+You need to create the template, <code class="docutils literal notranslate"><span class="pre">blog/templates/blog/blog_tag_index_page.html</span></code> and add the following content to it:</p>
+<div class="highlight-html+django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;base.html&quot;</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">load</span> <span class="nv">wagtailcore_tags</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span>
+
+    <span class="cp">{%</span> <span class="k">if</span> <span class="nv">request.GET.tag</span> <span class="cp">%}</span>
+        <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Showing pages tagged &quot;<span class="cp">{{</span> <span class="nv">request.GET.tag</span> <span class="cp">}}</span>&quot;<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nv">blogpage</span> <span class="k">in</span> <span class="nv">blogpages</span> <span class="cp">%}</span>
+
+          <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{%</span> <span class="k">pageurl</span> <span class="nv">blogpage</span> <span class="cp">%}</span><span class="s">&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">blogpage.title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+              <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Revised: <span class="cp">{{</span> <span class="nv">blogpage.latest_revision_created_at</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+    <span class="cp">{%</span> <span class="k">empty</span> <span class="cp">%}</span>
+        No pages found with that tag.
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>In the preceding <code class="docutils literal notranslate"><span class="pre">blog_tag_index_page.html</span></code> template, you’re calling the built-in <code class="docutils literal notranslate"><span class="pre">latest_revision_created_at</span></code> field on the <code class="docutils literal notranslate"><span class="pre">Page</span></code> model. It’s handy to know this is always available.</p>
+<p>Clicking the tag button at the bottom of a blog post renders a page like this:</p>
+<p></p>
+</section>
+</section>
+<section id="congratulations">
+<h2>Congratulations!<a class="headerlink" href="tutorial.html#congratulations" title="Link to this heading">¶</a></h2>
+<p>You completed this tutorial 🥳. Applaud yourself, and get yourself a cookie!</p>
+<p>Thank you for reading and welcome to the Wagtail community!</p>
+</section>
+<section id="where-next">
+<h2>Where next<a class="headerlink" href="tutorial.html#where-next" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Read our <a class="reference internal" href="https://docs.wagtail.org/en/stable/tutorial/index.html"><span class="std std-doc">full tutorial</span></a> to transform your blog site into a fully deployable portfolio site.</p></li>
+<li><p>Read the Wagtail <a class="reference internal" href="https://docs.wagtail.org/en/stable/topics/index.html"><span class="doc std std-doc">topics</span></a> and <a class="reference internal" href="https://docs.wagtail.org/en/stable/reference/index.html"><span class="doc std std-doc">reference</span></a> documentation</p></li>
+<li><p>Learn how to implement <a class="reference internal" href="../topics/streamfield.html"><span class="doc std std-doc">StreamField</span></a> for freeform page content</p></li>
+<li><p>Browse through the <a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/index.html"><span class="doc std std-doc">advanced topics</span></a> section and read <a class="reference internal" href="https://docs.wagtail.org/en/stable/advanced_topics/third_party_tutorials.html"><span class="doc std std-doc">third-party tutorials</span></a></p></li>
+</ul>
+</section>
+</section>
+
+</main>
+                        <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
+    <a class="float-left" href="https://docs.wagtail.org/en/stable/getting_started/index.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>Getting started
+    </a>
+    <a class="float-right" href="https://docs.wagtail.org/en/stable/getting_started/quick_install.html" title="Next">
+        Quick install <span aria-hidden="true">&nbsp;→</span>
+    </a>
+</nav>
+                    </div>
+                    
+                    <nav class="col-12 col-lg-3 pb-4">
+                        <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
+                            <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
+                            <ul>
+<li><a class="reference internal" href="tutorial.html#">Your first Wagtail site</a><ul>
+<li><a class="reference internal" href="tutorial.html#install-and-run-wagtail">Install and run Wagtail</a><ul>
+<li><a class="reference internal" href="tutorial.html#install-dependencies">Install dependencies</a></li>
+<li><a class="reference internal" href="tutorial.html#create-and-activate-a-virtual-environment">Create and activate a virtual environment</a></li>
+<li><a class="reference internal" href="tutorial.html#install-wagtail">Install Wagtail</a></li>
+<li><a class="reference internal" href="tutorial.html#generate-your-site">Generate your site</a></li>
+<li><a class="reference internal" href="tutorial.html#install-project-dependencies">Install project dependencies</a></li>
+<li><a class="reference internal" href="tutorial.html#create-the-database">Create the database</a></li>
+<li><a class="reference internal" href="tutorial.html#create-an-admin-user">Create an admin user</a></li>
+<li><a class="reference internal" href="tutorial.html#start-the-server">Start the server</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="tutorial.html#extend-the-homepage-model">Extend the HomePage model</a><ul>
+<li><a class="reference internal" href="tutorial.html#wagtail-template-tags">Wagtail template tags</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="tutorial.html#a-basic-blog">A basic blog</a><ul>
+<li><a class="reference internal" href="tutorial.html#blog-index-and-posts">Blog index and posts</a></li>
+<li><a class="reference internal" href="tutorial.html#parents-and-children">Parents and children</a></li>
+<li><a class="reference internal" href="tutorial.html#overriding-context">Overriding Context</a></li>
+<li><a class="reference internal" href="tutorial.html#images">Images</a></li>
+<li><a class="reference internal" href="tutorial.html#authors">Authors</a></li>
+<li><a class="reference internal" href="tutorial.html#tag-posts">Tag posts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="tutorial.html#congratulations">Congratulations!</a></li>
+<li><a class="reference internal" href="tutorial.html#where-next">Where next</a></li>
+</ul>
+</li>
+</ul>
+
+                        </div>
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid bg-primary text-light">
+        <div class="container">
+            <div class="row">
+        <div class="col p-4">
+            
+                <nav aria-label="Footer">
+                    <ul class="nav justify-content-center mb-2">
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="../../../features/index.html">Features</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="../../../about-wagtail/index.html"> About Wagtail</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="../../../services/index.html"> Services</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="../../../blog/index.html"> Blog</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="../../../packages/index.html"> Packages</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/developers/"> Developers</a></li>
+                        
+                    </ul>
+                </nav>
+            
+            <div class="text-center">
+                    &copy; Copyright 2025, Wagtail core team and contributors. BSD license
+            </div>
+            <div class="text-center text-white-50 font-italic mt-3">
+                <small>
+                    Created using
+                    <a class="text-white" href="https://github.com/wagtail/sphinx_wagtail_theme" rel="nofollow" target="_blank">
+                        Sphinx Wagtail Theme 6.5.0
+                    </a>
+                    and
+                    <a class="text-white" href="https://www.sphinx-doc.org/" rel="nofollow" target="_blank">
+                        Sphinx 7.4.7
+                    </a>
+                </small>
+            </div>
+        </div>
+    </div>
+        </div>
+    </footer>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    <template data-promotion-banner="" data-clear-duration="90" data-date-until="2024-06-22">
+        <div class="promotion-banner">
+            <svg aria-hidden="true" viewBox="0 0 190 132" width="36" height="36"><defs><path id="a" d="M89.58 26.597C81.876 11.063 65.8.375 47.213.375S12.552 11.063 4.85 26.597C1.746 32.857 0 39.902 0 47.354c0 6.875 1.484 13.404 4.15 19.288 12.926 1.555 27.562 2.432 43.064 2.432 15.503 0 30.138-.877 43.064-2.432 2.667-5.884 4.152-12.413 4.152-19.288 0-7.452-1.747-14.497-4.85-20.757"/></defs><g fill="none" fill-rule="evenodd"><g><g><path fill="#DFDFDF" d="M49.467 127.165h4.465V86.51h-4.465"/><path fill="#DFDFDF" d="M55.836 127.153c0 2.677-2.18 4.847-4.87 4.847s-4.87-2.17-4.87-4.847c0-2.676 2.18-4.846 4.87-4.846s4.87 2.17 4.87 4.846M134.91 127.165h4.466V86.51h-4.465"/><path fill="#DFDFDF" d="M142.404 127.153c0 2.677-2.18 4.847-4.87 4.847s-4.87-2.17-4.87-4.847c0-2.676 2.18-4.846 4.87-4.846s4.87 2.17 4.87 4.846"/><path fill="#D23C2B" d="M94.975 86.13L0 70.85s2.768 30.56 94.975 30.56c92.208 0 94.976-30.56 94.976-30.56L94.976 86.13"/><path fill="#DE4D33" d="M189.95 69.77c0 12.38-42.52 22.415-94.975 22.415C42.523 92.185 0 82.15 0 69.77 0 57.394 42.523 47.36 94.975 47.36c52.454 0 94.974 10.035 94.974 22.413"/><path fill="#DE4D33" d="M189.95 69.77c0 12.38-42.52 22.415-94.975 22.415C42.523 92.185 0 82.15 0 69.77 0 57.394 42.523 47.36 94.975 47.36c52.454 0 94.974 10.035 94.974 22.413"/><g transform="translate(48.343)"><mask id="b" fill="#fff"><use href="#a"/></mask><use fill="#9FD6E4" href="#a"/><g mask="url(#b)"><g transform="translate(-25.858 10.068)"><path fill="#8DBEC9" d="M66.328 58.76h.987c6.65-.016 13.134-.195 19.39-.518-.003-.033-1.522-14.294-11.057-29.093-2.158 2.536-5.382 4.146-8.983 4.146-6.5 0-11.77-5.243-11.77-11.712 0-3.97 1.986-7.476 5.022-9.593-6.19-4.746-13.78-8.84-23.1-11.615C33 3.422 29.67 7.045 26.96 11.115c-1.033 1.55-1.98 3.16-2.826 4.828l-.015.03c-.01.017-.017.033-.025.05l-.036.07-.006.01-.09.18c-3.104 6.26-4.852 13.306-4.852 20.76 0 .757.02 1.51.054 2.26.288 6.045 1.725 11.79 4.098 17.026 12.926 1.554 27.562 2.43 43.064 2.43" opacity=".293"/><path fill="#FFF" fill-rule="nonzero" d="M85.573 11.186v5.07s-10.397-3.38-17.124 2.755c-4.894 4.447-5.302 9.427-3.06 16.095 22.018 0 25.483 10.76 25.483 10.76l-2.242-12.36 6.932-7.38c0-8.714-8.256-14.494-9.99-14.94z" opacity=".821"/><ellipse cx="86.568" cy="23.492" fill="#000" fill-rule="nonzero" opacity=".821" rx="2.249" ry="2.237"/><path fill="#000" fill-rule="nonzero" d="M90.537 45.566s-3.35-14.862-25.274-10.833c-2.232-6.715-1.826-11.64 3.045-16.204 6.598-6.18 16.95-2.777 16.95-2.777V10.65c-3.653-1.432-7.104-1.7-10.96-1.7-14.11 0-21.925 9.31-25.274 15.577L9.338 88.897l11.165-1.88L0 121.932l14.31-2.238L25.274 92.21c31.06 0 70.846-9.85 65.264-46.644zM104.556 33.56l-8.79-7.83-6.95 7.83" opacity=".821"/><path fill="#FFF" fill-rule="nonzero" d="M30.355 83.898s1.006-.177 2.818-.53c1.812-.356 4.328-.887 7.347-1.596 1.51-.355 3.12-.798 4.83-1.33 1.712-.53 3.523-1.063 5.234-1.77 1.812-.622 3.624-1.42 5.435-2.305 1.81-.886 3.522-1.86 5.132-3.013.402-.266.805-.53 1.208-.886l1.207-.886c.705-.62 1.51-1.24 2.215-1.95.704-.62 1.308-1.328 1.912-2.037l.906-1.063.402-.532.403-.532c.2-.354.503-.708.704-1.063.2-.354.402-.71.704-1.063.1-.177.2-.355.302-.532.1-.177.2-.354.302-.53.2-.356.402-.71.503-1.065l.907-2.126c.2-.71.503-1.42.704-2.04.202-.62.303-1.328.504-1.86.1-.62.202-1.152.302-1.772.1-.532.2-1.063.2-1.506.102-.443.102-.886.203-1.33.1-1.594.1-2.48.1-2.48l1.61.088s-.1.975-.202 2.57c-.1.443-.1.886-.2 1.33-.102.53-.102 1.062-.303 1.594-.1.53-.302 1.152-.402 1.772-.202.62-.403 1.24-.604 1.95-.203.708-.504 1.328-.806 2.126-.302.71-.604 1.417-1.007 2.215-.2.354-.402.71-.604 1.063-.1.177-.2.355-.302.532l-.3.53c-.202.356-.504.71-.705 1.153-.302.355-.503.71-.805 1.064-.1.176-.302.353-.403.53l-.402.532-.906 1.063c-.706.71-1.31 1.418-2.115 2.038-.704.71-1.51 1.24-2.314 1.95l-1.207.885c-.403.266-.805.532-1.31.798-1.71 1.063-3.52 2.038-5.333 2.924-1.81.797-3.723 1.595-5.535 2.215-1.812.62-3.623 1.152-5.334 1.595-1.71.443-3.32.886-4.93 1.152-3.02.62-5.637 1.152-7.448 1.417-1.61.53-2.617.708-2.617.708z" opacity=".821"/></g></g></g><path fill="#9FD6E4" d="M75.325 68.613h.002-.002"/><path fill="#C7462F" d="M95.425 69.054h-.174.175c15.502 0 30.138-.877 43.064-2.432 2.372-5.235 3.81-10.982 4.097-17.027-.288 6.045-1.725 11.792-4.098 17.027-12.927 1.555-27.563 2.432-43.065 2.432m-.23 0h-.114.114m-.198 0h-.085.086m-.18 0h-.07.07m-.192 0h-.034.034m-.178 0h-.008.008"/><path fill="#1D2533" d="M137.33 26.445l-.09-.18.09.18m-.095-.19l-.036-.072c.01.023.024.047.035.072m-.06-.12l-.015-.03.016.03"/><path fill="#FFFFFE" d="M31.976 65.48c0 1.978-3.635 3.58-8.118 3.58-4.484 0-8.118-1.602-8.118-3.58 0-1.977 3.634-3.58 8.118-3.58 4.483 0 8.118 1.603 8.118 3.58M170.26 65.48c0 1.978-3.634 3.58-8.118 3.58s-8.118-1.602-8.118-3.58c0-1.977 3.634-3.58 8.118-3.58s8.118 1.603 8.118 3.58M58.957 76.666c0 1.977-3.634 3.58-8.117 3.58-4.483 0-8.118-1.603-8.118-3.58 0-1.976 3.635-3.58 8.118-3.58 4.483 0 8.117 1.604 8.117 3.58M145.525 76.666c0 1.977-3.634 3.58-8.117 3.58-4.484 0-8.118-1.603-8.118-3.58 0-1.976 3.634-3.58 8.118-3.58 4.483 0 8.117 1.604 8.117 3.58M103.93 80.022c0 1.977-3.636 3.58-8.12 3.58-4.483 0-8.118-1.603-8.118-3.58 0-1.976 3.635-3.58 8.12-3.58 4.482 0 8.117 1.604 8.117 3.58"/></g></g></g></svg>
+            
+            
+            <a href="https://nl.wagtail.space/">
+                <div>
+                    <strong>Wagtail Space NL</strong>
+                    <br />12 &#x2013; 14 June 2024 in Arnhem, The Netherlands
+                </div>
+            </a>
+            <a href="https://us.wagtail.space/">
+                <div>
+                    <strong>Wagtail Space US</strong>
+                    <br />20 &#x2013; 22 June 2024 in Philadelphia, USA
+                </div>
+            </a>
+            <button class="close" aria-label="Hide banner" aria-expanded="true" type="button" data-clear="">&#x2715;</button>
+        </div>
+    </template>
+</body>
+</html>
