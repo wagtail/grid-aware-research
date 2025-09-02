@@ -1,11 +1,20 @@
 {
-  "browser": "firefox",
-  "iterations": 1,
-  "firefox": {
-    "powerConsumption": true,
-    "geckoProfiler": true,
-    "geckoProfilerParams": {
-      "features": "power"
+  "browsertime": {
+    "browser": "firefox",
+    "firefox": {
+      "geckoProfiler": true,
+      "geckoProfilerParams": {
+        "bufferSize": 134217728,
+        "interval": 10,
+        "features": "screenshots,js,stackwalk,cpu,processcpu,nostacksampling,ipcmessages,markersallthreads,power",
+        "threads": "GeckoMain,Renderer"
+      }
     }
+  },
+  "sustainable": {
+    "enable": true
+  },
+  "firefox": {
+    "powerConsumption": true
   }
 }
